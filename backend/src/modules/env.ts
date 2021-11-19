@@ -1,6 +1,4 @@
 export const env = {
-  host: process.env.HOST,
-  port: process.env.PORT,
   database: {
     host: process.env.DATABASE_HOST,
     port: +process.env.DATABASE_PORT,

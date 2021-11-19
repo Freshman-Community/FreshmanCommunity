@@ -61,7 +61,7 @@ export async function initializeSequelize() {
 
   try {
     await sequelize.authenticate();
-    logger.info('Connection has been established successfully :)');
+    logger.info('Database connection has been established successfully :)');
   } catch (error) {
     logger.error(`Unable to establish connection to the database :( ${error}`);
   }
