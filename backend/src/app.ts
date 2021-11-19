@@ -6,4 +6,6 @@ export const app = express();
 
 initializeSequelize();
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(path, router);
