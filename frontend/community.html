@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <script src="https://kit.fontawesome.com/caa9be95ad.js"></script>
+    <script src="community.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto"
+    />
+    <link rel="stylesheet" href="community.css" />
+    <title>Community</title>
+  </head>
+  <body onload="loadArticles(1)">
+    <div class="header-place">
+      <div class="header">
+        <label class="logo">Freshman Community</label>
+        <label class="user">Sign in</label>
+      </div>
+    </div>
+    <div class="main-place">
+      <div class="info-place">
+        <h3 class="community-type">자유게시판</h3>
+        <p class="community-description">
+          자유로운 주제로 대화하는 게시판입니다.
+        </p>
+      </div>
+      <div class="editor-place">
+        <div class="editor">
+          <label
+            class="write-article"
+            width="100%"
+            onclick="(() => window.location = '/community-post.html')()"
+          >
+            새 글을 작성해주세요!
+          </label>
+        </div>
+      </div>
+
+      <div class="article-place" id="article-place"></div>
+    </div>
+  </body>
+</html>

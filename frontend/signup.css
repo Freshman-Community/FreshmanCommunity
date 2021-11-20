@@ -1,0 +1,164 @@
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #a29bfe, #dfe6e9);
+  font-family: 'Roboto';
+}
+
+.signupForm {
+  width: 360px;
+  background: #f1f1f1;
+  height: 540px;
+  padding: 80px 30px;
+  border-radius: 10px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.signupForm h1 {
+  text-align: center;
+  margin-bottom: 30px;
+
+  font-weight: 600;
+}
+
+.birthBox {
+  padding: 0;
+  margin: 0;
+}
+
+.birthInput {
+  display: inline-block;
+  height: 40px;
+}
+
+.yy {
+  width: 30%;
+}
+
+.mm {
+  margin-left: 5%;
+  width: 20%;
+}
+
+.dd {
+  margin-left: 3%;
+  width: 20%;
+}
+
+.inputBox {
+  border-bottom: 2px solid #adadad;
+  position: relative;
+  margin: 30px 0;
+}
+
+.inputBox input {
+  font-size: 15px;
+  color: #333;
+  border: none;
+  width: 100%;
+  background: none;
+  outline: none;
+  padding: 0 5px;
+  height: 40px;
+}
+
+.inputBox select {
+  font-size: 15px;
+  color: #333;
+  border: none;
+  width: 100%;
+  background: none;
+  outline: none;
+  padding: 0 5px;
+  height: 40px;
+}
+
+.inputBox span::before {
+  content: attr(data-placeholder);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 5px;
+  color: #adadad;
+  transition: 0.5s;
+  z-index: -1;
+}
+
+.inputBox span::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(135deg, #a29bfe, #dfe6e9);
+  transition: 0.5s;
+}
+
+.focus + span::before {
+  top: -5px;
+  font-size: 13px;
+  color: #a29bfe;
+}
+
+.focus + span::after {
+  width: 100%;
+}
+
+.buttonBox {
+  position: relative;
+  margin: 30px 0;
+  padding: 0;
+
+  font-size: 0;
+}
+
+.signupBtn,
+.cancleBtn {
+  display: inline-block;
+  width: calc(50% - 10px);
+  height: 50px;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  outline: none;
+  cursor: pointer;
+  transition: 0.5s;
+
+  padding: 0;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.signupBtn {
+  margin-right: 20px;
+  background: #a29bfe;
+}
+
+.signupBtn:hover {
+  background: #6c5ce7;
+}
+
+.cancleBtn {
+  background: #b2bec3;
+}
+.cancleBtn:hover {
+  background: #636e72;
+}
+
+.bottomText {
+  margin-top: 60px;
+  text-align: center;
+  font-size: 13px;
+
+  font-weight: 100;
+}
+
+.rememberMe {
+  color: #a29bfe;
+  transition: 0.5s;
+}
+
+.rememberMe:hover {
+  color: #6c5ce7;
+}
