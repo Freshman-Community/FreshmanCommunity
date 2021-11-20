@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto"
+    />
+    <link rel="stylesheet" href="signUp.css" />
+
+    <script src="https://kit.fontawesome.com/caa9be95ad.js"></script>
+    <title>Sign up</title>
+  </head>
+  <body>
+    <form action="/api/user/signup" method="POST" class="signupForm">
+      <h1>Sign up</h1>
+
+      <div class="inputBox">
+        <input type="text" name="username" />
+        <span data-placeholder="Username"></span>
+      </div>
+
+      <div class="inputBox">
+        <input type="password" id="password" name="password" />
+        <span data-placeholder="Password"></span>
+      </div>
+
+      <div class="inputBox">
+        <input type="password" id="re-password" />
+        <span data-placeholder="Re-enter Password"></span>
+      </div>
+
+      <div class="inputBox">
+        <input type="text" name="nickname" />
+        <span data-placeholder="Nick name"></span>
+      </div>
+
+      <div class="inputBox">
+        <select name="major" id="major">
+          <option value="" class="optionInfo">Major</option>
+          <option value="Business Administration">경영학과</option>
+          <option value="Industrial System Engineering">산업공학과</option>
+          <option value="Electrical and Information Engineering">
+            전기정보공학과
+          </option>
+          <option value="Electronic and IT Media Engineering">
+            전자IT미디어공학과
+          </option>
+          <option value="Computer Science">컴퓨터공학과</option>
+          <option value="MSDE">MSDE</option>
+        </select>
+      </div>
+
+      <div class="inputBox">
+        <select name="enteredYear" id="enteredYear">
+          <option value="" class="optionInfo">--Entered year--</option>
+          <option value="2022">2022</option>
+          <option value="2021">2021</option>
+          <option value="2020">2020</option>
+          <option value="2019">2019</option>
+          <option value="2018">2018</option>
+          <option value="2017">2017</option>
+          <option value="2016">2016</option>
+          <option value="2015">2015</option>
+          <option value="2014">2014</option>
+          <option value="2013">2013</option>
+          <option value="2012">2012</option>
+          <option value="2011">2011</option>
+          <option value="2010">2010</option>
+        </select>
+      </div>
+
+      <div class="buttonBox">
+        <input type="submit" value="Sign up" class="signupBtn" />
+        <input type="button" value="Cancle" class="cancleBtn" />
+      </div>
+    </form>
+  </body>
+</html>

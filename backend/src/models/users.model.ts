@@ -23,7 +23,7 @@ export class Users extends Model {
           unique: 'users_username_uindex',
         },
         password: {
-          type: DataTypes.STRING(255),
+          type: DataTypes.STRING(128),
           allowNull: false,
         },
         nickname: {
@@ -43,12 +43,6 @@ export class Users extends Model {
         freezeTableName: true,
         timestamps: false,
         indexes: [
-          {
-            name: 'PRIMARY',
-            unique: true,
-            using: 'BTREE',
-            fields: [{ name: 'id' }],
-          },
           {
             name: 'users_username_uindex',
             unique: true,

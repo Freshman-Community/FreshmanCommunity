@@ -2,13 +2,7 @@
   "compilerOptions": {
     "target": "ES6",
     "module": "CommonJS",
-    "outDir": "./dist",
-    "paths": {
-      "@services/*": ["./src/services/*"],
-      "@controllers/*": ["./src/controllers/*"],
-      "@modules/*": ["./src/modules/*"],
-      "@routes/*": ["./src/routes/*"]
-    }
+    "outDir": "./dist"
   },
   "include": ["src"]
 }

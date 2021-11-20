@@ -1,4 +1,7 @@
 export const env = {
+  session: {
+    secret: process.env.SESSION_SECRET,
+  },
   database: {
     host: process.env.DATABASE_HOST,
     port: +process.env.DATABASE_PORT,

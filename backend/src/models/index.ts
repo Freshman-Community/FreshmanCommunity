@@ -16,12 +16,23 @@ const sequelize = new Sequelize(database, username, password, {
 });
 
 export async function initializeSequelize() {
-  logger.debug('Start to initialize models');
+  let startUpDatabase: boolean = false;
+  while (!startUpDatabase) {
+    try {
+      await sequelize.authenticate();
+      logger.info('Database connection has been established successfully :)');
+      startUpDatabase = true;
+    } catch (error) {
+      logger.error(
+        `Unable to establish connection to the database :( ${error}`,
+      );
+    }
+  }
+
   Users.initModel(sequelize);
   Articles.initModel(sequelize);
   Comments.initModel(sequelize);
 
-  logger.debug('Start to create model associations');
   Users.hasMany(Articles, {
     foreignKey: 'authorId',
     sourceKey: 'id',
@@ -58,13 +69,6 @@ export async function initializeSequelize() {
     onDelete: 'CASCADE',
     onUpdate: 'CASCADE',
   });
-
-  try {
-    await sequelize.authenticate();
-    logger.info('Database connection has been established successfully :)');
-  } catch (error) {
-    logger.error(`Unable to establish connection to the database :( ${error}`);
-  }
 
   return sequelize;
 }
