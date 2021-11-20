@@ -1,0 +1,255 @@
+<!--
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.header {
+    width: 100%;
+    height: 20%;
+    background: blue;
+}
+
+.nav {
+    width: 30%;
+    height: 65%;
+    float: left;
+    background: white;
+}
+
+.section {
+    width: 70%;
+    height: 70%;
+    float: left;
+    background: white;
+}
+
+.footer {
+    width: 100%;
+    height: 15%;
+    clear: both;
+    background: blue;
+}
+-->
+
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, ol, ul, li, form, label, legend, caption, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    font-size: 100%;
+    font-family: inherit;
+    vertical-align: baseline;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+a img {
+    border: none
+}
+
+aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block
+}
+
+/************************ Basics ************************/
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    background-color: #fff;
+    background-image: url(images/stucco.png);
+    color: #191919;
+    margin: 0 0 1px;
+    height: 100%;
+    line-height: 1.5;
+}
+
+    body: before {
+        content: "";
+        position: fixed;
+        top: -10px;
+        left: 0;
+        width: 100%;
+        height: 10px;
+        -webkit-box-shadow: 0px 0px 10px rgba(0,0,0,.8);
+        -moz-box-shadow: 0px 0px 10px rgba(0,0,0,.8);
+        box-shadow: 0px 0px 10px rgba(0,0,0,.8);
+        z-index: 100;
+    }
+
+p {
+    margin-bottom: 7px;
+}
+
+@font-face {
+    font-family: 'BoycottRegular';
+    src: url('BOYCOTT_-webfont.eot');
+    src: url('BOYCOTT_-webfont.eot?#iefix') format('embedded-opentype'), url('BOYCOTT_-webfont.ttf') format('truetype'), url('BOYCOTT_-webfont.svg#BoycottRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1.fontface {
+    font: 60px/68px 'BoycottRegular', Arial, sans-serif;
+    letter-spacing: 0;
+}
+
+h2.fontface {
+    font: 48px/52px 'BoycottRegular', Arial, sans-serif;
+    letter-spacing: 0;
+}
+
+p.style1 {
+    font: 18px/27px 'BoycottRegular', Arial, sans-serif;
+}
+
+a, p a {
+    text-decoration: none;
+    color: #333;
+}
+
+    a:hover {
+        color: #191919;
+    }
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    position: relative;
+}
+
+
+
+table {
+    border: 1px solid lightgray;
+    border-collapse: collapse;
+    border-top-color: indianred;
+    border-top:3px;
+    position:relative;
+    left:80px;
+    border-collapse:collapse;
+}
+
+td {
+    border:1px solid lightgray;
+}
+
+th {
+    background-color: #EAEAEA;
+    border: 1px solid lightgray;
+}
+
+h1 {
+    font-size:25px;
+    font-weight: bold;
+    color: black;
+}
+
+a {
+    text-decoration:none; color:black;
+}
+.contents a:hover {
+    text-decoration: underline;
+    color: #B80007;
+}
+a:active {
+    color: #B80007;
+}
+
+.academic {
+    font-weight: bold;
+}
+.menu>a {
+    font-weight: bold;
+}
+
+#contents_position {
+    position:relative;
+    left:80px;
+}
+
+img {
+    width:15px;
+}
+
+/*스크롤바 없애기*/
+.contents {
+    overflow:hidden;
+}
+
+hr {
+    border: 0.3px solid gray;
+}
+
+.day {
+    font-size: 25px;
+    font-weight: bold;
+    color: black;
+}
+
+.date {
+    color: #B80007;
+}
+
+.first_td_1 {
+    background-color: #EAEAEA;
+    color: #B80007;
+}
+
+.first_td_2 {
+    background-color: #EAEAEA;
+    color: black;
+}
+
+.menu>a {
+    font-weight:bold;
+    cursor: pointer;
+}
+
+.menu .hide {
+    display: none;
+    font-weight: normal;
+    position: relative;
+    left: 20px;
+    color: dimgrey;
+}
+
+.cal_date {
+    position: relative;
+    left: 80px;
+}
+
+/*졸업요건의 스크롤바를 숨김*/
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.sub_title {
+    font-size:large;
+    color:black;
+    position:relative;
+    left:50px;
+}
+
+h1.underbar:after {
+    content: "";
+    display: block;
+    width: 60px;
+    border-bottom: 3px solid #B80007;
+    margin: 20px 0px;
+}
+
+/*SoulTech Red 색상값= #B80007 */

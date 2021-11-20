@@ -1,0 +1,43 @@
+<link rel="stylesheet" type="text/css" href="style.css">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $(".menu>a").click(function(){
+            var submenu = $(this).next("ul");
+            if( submenu.is(":visible") ){
+                submenu.slideUp();
+            }else{
+                submenu.slideDown();
+            }
+        });
+    });
+</script>
+
+<div class="contents">
+    <div class="a1 contents_1 on">
+        <p><p>
+            <a class="academic" href="sch_dec.html" target="right">학사일정</a>
+        <p>
+    </div>
+    <hr noshade>
+    <div class="a1 contents_2">
+        <p><p>
+            <a class="academic" href="https://www.seoultech.ac.kr/service/info/matters/" target="right">학사공지</a>
+        <p>
+    </div>
+    <hr noshade>
+    <p></p><p></p>
+    <div>
+        <ul>
+            <li class="menu">
+                <a>졸업요건</a>
+                <ul class="hide">
+                    <li><a href="graduation.html#필수교과목" target="right">필수교과목</a></li>
+                    <li><a href="graduation.html#필수이수학점" target="right">필수이수학점</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <p></p>
+    <hr noshade>
+</div>
