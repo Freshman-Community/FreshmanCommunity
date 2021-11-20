@@ -3,11 +3,10 @@ import { Request, Response } from 'express';
 import * as usersService from '../services/users.service';
 
 export async function signIn(req, res: Response) {
-  req.login();
   res.send(`
     <script type="text/javascript">
-      alert("${req.user.username}님 안녕하세요!");
-      window.location = document.referrer;
+      alert("${req.user.username} 님 안녕하세요!");
+      window.location = '/community.html';
     </script>
   `);
 }

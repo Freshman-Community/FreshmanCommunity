@@ -42,14 +42,12 @@ export async function verifyUser(
   username: string,
   password: string,
 ): Promise<boolean> {
-  const { password: hashedPassword } = await Users.findOne({
-    where: { username },
-  });
+  const user = await Users.findOne({ where: { username } });
 
-  if (hashedPassword === undefined) {
+  if (user === null) {
     return false;
   } else if (
-    createHash('sha512').update(password).digest('hex') === hashedPassword
+    createHash('sha512').update(password).digest('hex') === user.password
   ) {
     return true;
   } else {

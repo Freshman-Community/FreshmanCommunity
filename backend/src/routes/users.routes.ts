@@ -8,8 +8,7 @@ export const path = '/api/user';
 export const router = Router();
 
 const passportOptions = {
-  successRedirect: '/home.html',
-  failureRedirect: '/signIn.html',
+  failureRedirect: '/signin.html',
 };
 
 passport.use(LocalStrategy());
@@ -21,7 +20,7 @@ router.post(
 );
 router.get('/signout', (req, res) => {
   req.logout();
-  req.session.save(() => res.redirect('/home.html'));
+  req.session.save(() => res.redirect('/community.html'));
 });
 router.post('/signup', usersController.signUp);
 

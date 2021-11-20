@@ -55,14 +55,6 @@ export class Comments extends Model {
         timestamps: true,
         createdAt: 'createdAt',
         updatedAt: 'updatedAt',
-        indexes: [
-          {
-            name: 'PRIMARY',
-            unique: true,
-            using: 'BTREE',
-            fields: [{ name: 'id' }],
-          },
-        ],
       },
     );
     return Comments;
