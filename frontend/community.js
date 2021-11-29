@@ -18,7 +18,7 @@ async function loadArticles(page) {
         (article) => `
           <div class="article" article-id="${article.id}">
             <span class="title">${article.title}</span>
-            <span class="author">${article.nickname}</span>
+            <span class="author">${article.User.nickname}</span>
             <p class="content">${article.content}</p>
           </div>
         `,

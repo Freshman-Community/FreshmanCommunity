@@ -17,24 +17,29 @@
     <title>Sign in</title>
   </head>
   <body>
+    <div class="background"></div>
     <form action="/api/user/signin" method="POST" class="signinForm">
       <h1>Sign in</h1>
 
       <div class="inputBox">
-        <input type="text" name="username" />
+        <input type="text" name="username" onblur="checkEmpty('username')" />
         <span data-placeholder="Username"></span>
       </div>
 
       <div class="inputBox">
-        <input type="password" name="password" />
+        <input
+          type="password"
+          name="password"
+          onblur="checkEmpty('password')"
+        />
         <span data-placeholder="Password"></span>
       </div>
 
-      <input type="submit" value="Sign in" class="signinBtn" />
+      <input type="submit" value="Let's Go!" class="signinBtn" />
 
       <div class="bottomText">
         Don't have account?
-        <a href="/signup.html">Sign up</a>
+        <a href="/signup.html" class="signup-url">Sign up</a>
       </div>
     </form>
   </body>

@@ -1,15 +1,28 @@
+body,
+html {
+  height: 100%;
+}
+
 body {
   min-height: 100vh;
-  background: linear-gradient(135deg, #a29bfe, #dfe6e9);
   font-family: 'Roboto';
 }
 
+.background {
+  background-image: url('https://seoultech.ac.kr/storage/splash/SNUST7732F4CBE77E4E7A8A65C300BA14F6EC.jpg');
+  filter: blur(8px);
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+
 .signinForm {
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  border-radius: 10px;
   width: 360px;
-  background: #f1f1f1;
   height: 480px;
   padding: 80px 30px;
-  border-radius: 10px;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -31,7 +44,7 @@ body {
 
 .inputBox input {
   font-size: 15px;
-  color: #333;
+  color: #f1f1f1;
   border: none;
   width: 100%;
   background: none;
@@ -51,23 +64,11 @@ body {
   z-index: -1;
 }
 
-.inputBox span::after {
-  content: '';
-  position: absolute;
-  width: 0%;
-  height: 2px;
-  background: linear-gradient(135deg, #a29bfe, #dfe6e9);
-  transition: 0.5s;
-}
-
-input:focus + span::before {
+input:focus + span::before,
+input.inserted + span::before {
   top: -5px;
   font-size: 13px;
-  color: #a29bfe;
-}
-
-input:focus + span::after {
-  width: 100%;
+  color: #f1f1f1;
 }
 
 .signinBtn {
@@ -76,9 +77,9 @@ input:focus + span::after {
   height: 50px;
   border: none;
   border-radius: 5px;
-  background: linear-gradient(135deg, #a29bfe, #dfe6e9);
+  background-color: rgba(0, 0, 0, 0.4);
   background-size: 200%;
-  color: #fff;
+  color: #f1f1f1;
   outline: none;
   cursor: pointer;
   transition: 0.5s;
@@ -87,7 +88,8 @@ input:focus + span::after {
 }
 
 .signinBtn:hover {
-  background-position: right;
+  background-color: rgba(255, 255, 255, 0.4);
+  color: #333;
 }
 
 .bottomText {
@@ -98,11 +100,12 @@ input:focus + span::after {
   font-weight: 100;
 }
 
-.rememberMe {
-  color: #a29bfe;
+.signup-url {
+  font-weight: bold;
+  color: white;
   transition: 0.5s;
 }
 
-.rememberMe:hover {
-  color: #6c5ce7;
+.signup-url:hover {
+  color: rgb(184, 0, 7);
 }
