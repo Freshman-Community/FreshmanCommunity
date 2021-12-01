@@ -1,4 +1,4 @@
-<!--
+
 html, body {
     margin: 0;
     padding: 0;
@@ -77,7 +77,7 @@ body {
     line-height: 1.5;
 }
 
-    body: before {
+    body:before {
         content: "";
         position: fixed;
         top: -10px;
@@ -192,7 +192,7 @@ img {
     width:15px;
 }
 
-/*½ºÅ©·Ñ¹Ù ¾ø¾Ö±â*/
+/*ìŠ¤í¬ë¡¤ë°” ì—†ì• ê¸°*/
 .contents {
     overflow:hidden;
 }
@@ -239,7 +239,7 @@ hr {
     left: 80px;
 }
 
-/*Á¹¾÷¿ä°ÇÀÇ ½ºÅ©·Ñ¹Ù¸¦ ¼û±è*/
+/*ì¡¸ì—…ìš”ê±´ì˜ ìŠ¤í¬ë¡¤ë°”ë¥¼ ìˆ¨ê¹€*/
 body::-webkit-scrollbar {
     display: none;
 }
@@ -284,7 +284,16 @@ h1.underbar:after {
     color: #B80007;
 }
 
-/*Seoul Tech Red »ö»ó°ª = #B80007 */
-/*Seoul Tech Blue »ö»ó°ª = #0031AD */
-/*Seoul Tech Gray »ö»ó°ª = #8F8F8F */
-/*¿¬ÇÑ È¸»ö »ö»ó°ª = #EAEAEA */
+.intro table {
+    text-align: center;
+}
+
+    .intro table::after th {
+        background-color: #8F8F8F;
+        color: white;
+    }
+
+/*Seoul Tech Red ìƒ‰ìƒê°’ = #B80007 */
+/*Seoul Tech Blue ìƒ‰ìƒê°’ = #0031AD */
+/*Seoul Tech Gray ìƒ‰ìƒê°’ = #8F8F8F */
+/*ì—°í•œ íšŒìƒ‰ ìƒ‰ìƒê°’ = #EAEAEA */
