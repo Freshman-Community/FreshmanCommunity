@@ -1,0 +1,99 @@
+body {
+  margin: 0px auto;
+  width: 1000px;
+  font-family: 'Raleway', 'Nanum Gothic';
+  background-color: #efefef;
+}
+
+header {
+  width: 1000px;
+  height: 70px;
+}
+
+header > .top {
+  background-color: #8f8f8f;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+}
+
+header > .top > .user {
+  display: flex;
+}
+
+header > .top > .user > div {
+  margin-right: 10px;
+}
+
+header > .container {
+  background-color: #b80007;
+  display: flex;
+}
+
+header > .container > .logo {
+  width: 150px;
+  margin-top: 7px;
+  margin-bottom: -7px;
+}
+
+header > .container > .menu {
+  width: 850px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+header > .container > .menu > .menu-item {
+  color: #fefefe;
+  font-size: 24px;
+}
+
+section {
+  width: 1000px;
+  background-color: #fefefe;
+}
+
+section > .article-youtube {
+  height: 400px;
+}
+
+section > .article {
+  height: 400px;
+  display: flex;
+  justify-content: space-between;
+}
+
+section > .article > .news {
+  width: 400px;
+  margin: 50px;
+}
+
+footer {
+  width: 1000px;
+  height: 100px;
+  background-color: #8f8f8f;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 18px;
+  color: #fefefe;
+}
+
+footer > .logo {
+  margin-left: 20px;
+  vertical-align: middle;
+  height: 25px;
+}
+
+footer > .logo-right > div {
+  width: 800px;
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  margin: 10px 0;
+}
+
+span {
+  display: block;
+}
