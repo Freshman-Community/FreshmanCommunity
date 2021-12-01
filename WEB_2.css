@@ -1,0 +1,23 @@
+td{
+    text-align: left;
+}
+table{
+    border-spacing : 14px;
+    border-collapse : separate;
+}
+span{
+    color : red;
+}
+button{ border: 1px solid gray; background-color: rgba(145, 127, 127, 0); 
+    color: rgb(24, 16, 136); padding: 5px;
+}
+button:hover{ color: rgb(24, 16, 136); 
+    background-color: gray;
+
+}
+input{
+    color : red;
+}
+ 
+
+

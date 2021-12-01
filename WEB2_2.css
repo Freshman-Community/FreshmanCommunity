@@ -1,0 +1,21 @@
+.content1{
+    position: relative;
+    left : 15%;
+}
+.top{
+    position: relative;
+    left : 15%;
+}
+
+.table{
+    position: relative;
+    left : 15%;
+    margin-top: 5%;
+    width : 600px;
+    height : 100px;
+}
+table{
+    border-collapse: collapse;
+}
+
+
