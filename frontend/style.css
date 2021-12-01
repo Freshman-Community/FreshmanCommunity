@@ -134,7 +134,7 @@ h1, h2, h3, h4, h5, h6 {
 
 
 table {
-    border: 1px solid lightgray;
+    border: 1px solid white;
     border-collapse: collapse;
     border-top-color: indianred;
     border-top:3px;
@@ -144,12 +144,15 @@ table {
 }
 
 td {
-    border:1px solid lightgray;
+    border: 1px solid white;
+    background-color: #EAEAEA;
 }
 
 th {
-    background-color: #EAEAEA;
-    border: 1px solid lightgray;
+    background-color: #8F8F8F;
+    border: 1px solid white;
+    color: white;
+    text-align: center;
 }
 
 h1 {
@@ -159,14 +162,18 @@ h1 {
 }
 
 a {
-    text-decoration:none; color:black;
+    text-decoration: none;
+    color:black;
 }
 .contents a:hover {
     text-decoration: underline;
     color: #B80007;
 }
-a:active {
+.contents a:active {
     color: #B80007;
+}
+
+.contents a span {
 }
 
 .academic {
@@ -191,7 +198,7 @@ img {
 }
 
 hr {
-    border: 0.3px solid gray;
+    border: 0.3px solid white;
 }
 
 .day {
@@ -205,13 +212,13 @@ hr {
 }
 
 .first_td_1 {
-    background-color: #EAEAEA;
-    color: #B80007;
+    background-color: #8F8F8F;
+    color: white;
 }
 
 .first_td_2 {
-    background-color: #EAEAEA;
-    color: black;
+    background-color: #8F8F8F;
+    color: white;
 }
 
 .menu>a {
@@ -252,4 +259,32 @@ h1.underbar:after {
     margin: 20px 0px;
 }
 
-/*SoulTech Red 색상값= #B80007 */
+.little-underbar:after {
+    content: "";
+    display: block;
+    width: 40px;
+    border-bottom: 3px solid #8F8F8F;
+    margin: 10px 0px;
+}
+
+.main-display {
+    position: relative;
+    left: 50px;
+}
+
+.library table {
+    position:relative;
+    left:0px;
+    width:300px;
+    text-align:center;
+}
+
+.library-first {
+    font-weight: bold;
+    color: #B80007;
+}
+
+/*Seoul Tech Red 색상값 = #B80007 */
+/*Seoul Tech Blue 색상값 = #0031AD */
+/*Seoul Tech Gray 색상값 = #8F8F8F */
+/*연한 회색 색상값 = #EAEAEA */
