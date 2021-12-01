@@ -1,10 +1,43 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script>
-      location.replace('/main.html');
-    </script>
+    <meta charset="UTF-8" />
     <title>Redirect</title>
+    <link rel="stylesheet" href="style.css">
   </head>
-  <body></body>
+  <body>
+    <div class="intro">
+      <table>
+        <th>
+          <td>김은솔</td>
+          <td>김혜원</td>
+          <td>유세헌</td>
+        </th>
+        <tr>
+          <td>학번</td>
+          <td>20101215</td>
+          <td>20101935</td>
+          <td>19101248</td>
+        </tr>
+        <tr>
+          <td>업무 분장</td>
+          <td>학과, 편의시설 페이지 작성</td>
+          <td>학사, 주변음식점 페이지 작성</td>
+          <td>게시판, 메인 페이지 작성</td>
+        </tr>
+        <div class="resttime"></div>
+      </table>
+    </div>
+    <script>
+      let restTime = 10;
+      const restTimeDiv = document.querySelector('.resttime')
+
+      function timeoutHandler(restTime) {
+        if (restTime === 0) location.replace('/main.html') ;
+        else restTimeDiv.innerHTML = restTime;
+        if (restTime > 0) setTimeout(() => timeoutHandler(restTime - 1), 1000);
+      }
+      setTimeout(() => timeoutHandler(10), 1000)
+    </script>
+  </body>
 </html>
