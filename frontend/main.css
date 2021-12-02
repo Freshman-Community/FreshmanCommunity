@@ -16,6 +16,11 @@ header > .top {
   align-items: center;
   justify-content: space-between;
   font-size: 12px;
+  height: 20px;
+}
+
+header > .top > .tip {
+  margin: 0 10px;
 }
 
 header > .top > .user {
@@ -29,12 +34,14 @@ header > .top > .user > div {
 header > .container {
   background-color: #b80007;
   display: flex;
+  height: 50px;
 }
 
 header > .container > .logo {
   width: 150px;
-  margin-top: 7px;
-  margin-bottom: -7px;
+  margin-top: 15px;
+  margin-bottom: -15px;
+  margin-left: 50px;
 }
 
 header > .container > .menu {
@@ -55,7 +62,9 @@ section {
 }
 
 section > .article-youtube {
-  height: 400px;
+  width: 100vw;
+  height: calc(100vw * 9 / 16);
+  margin-left: calc(-50vw + 50%);
 }
 
 section > .article {
