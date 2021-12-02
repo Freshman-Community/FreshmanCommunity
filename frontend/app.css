@@ -7,51 +7,52 @@ body {
 
 header {
   width: 1000px;
-  height: 70px;
-}
-
-header > .top {
+  height: 30px;
   background-color: #8f8f8f;
   display: flex;
   align-items: center;
   justify-content: space-between;
   font-size: 12px;
-  height: 20px;
 }
 
-header > .top > .tip {
+header > .tip {
   margin: 0 10px;
 }
 
-header > .top > .user {
+header > .user {
   display: flex;
 }
 
-header > .top > .user > div {
+header > .user > div {
   margin-right: 10px;
 }
 
-header > .container {
-  background-color: #b80007;
-  display: flex;
-  height: 50px;
+header a {
+  cursor: pointer;
 }
 
-header > .container > .logo {
+nav {
+  width: 1000px;
+  height: 60px;
+  background-color: #b80007;
+  display: flex;
+}
+
+nav > .logo {
   width: 150px;
   margin-top: 15px;
   margin-bottom: -15px;
   margin-left: 50px;
 }
 
-header > .container > .menu {
+nav > .menu {
   width: 850px;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
 }
 
-header > .container > .menu > .menu-item {
+nav > .menu > .menu-item {
   color: #fefefe;
   font-size: 24px;
 }
@@ -61,21 +62,10 @@ section {
   background-color: #fefefe;
 }
 
-section > .article-youtube {
+section > iframe {
   width: 100vw;
-  height: calc(100vw * 9 / 16);
+  height: calc(100vh - 200px);
   margin-left: calc(-50vw + 50%);
-}
-
-section > .article {
-  height: 400px;
-  display: flex;
-  justify-content: space-between;
-}
-
-section > .article > .news {
-  width: 400px;
-  margin: 50px;
 }
 
 footer {
@@ -105,4 +95,28 @@ footer > .logo-right > div {
 
 span {
   display: block;
+}
+
+nav a {
+  color: #efefef;
+}
+
+nav a:visited {
+  color: #efefef;
+}
+
+header a {
+  color: black;
+}
+
+header a:visited {
+  color: black;
+}
+
+a {
+  text-decoration-line: none;
+}
+
+a:hover {
+  text-decoration-line: underline;
 }

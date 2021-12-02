@@ -1,15 +1,37 @@
 import { Injectable } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
 import { CreateArticleDto } from './dto/create-article.dto';
 import { UpdateArticleDto } from './dto/update-article.dto';
+import { Article } from './entities/article.entity';
 
 @Injectable()
 export class ArticlesService {
+  constructor(
+    @InjectRepository(Article) private articlesRepository: Repository<Article>,
+  ) {}
+
   create(createArticleDto: CreateArticleDto) {
-    return 'This action adds a new article';
+    const article = new Article();
+
+    article.title = createArticleDto.title;
+    article.content = createArticleDto.content;
+    article.anonymity = createArticleDto.anonymity;
+    return this.articlesRepository.create(createArticleDto);
   }
 
-  findAll() {
-    return `This action returns all articles`;
+  findAll(offset: number, limit: number) {
+    return this.articlesRepository
+      .createQueryBuilder('article')
+      .offset(offset)
+      .limit(limit);
+  }
+
+  findBest() {
+    return this.articlesRepository
+      .createQueryBuilder('article')
+      .orderBy('article.likeCount')
+      .limit(5);
   }
 
   findOne(id: number) {

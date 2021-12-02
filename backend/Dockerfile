@@ -11,4 +11,4 @@ RUN npm i
 COPY . ./
 
 ENTRYPOINT ["npm"]
-CMD ["run", "start"]
+CMD ["run", "start:dev"]

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      body {
+        margin: 0;
+      }
+
+      .article-youtube {
+        width: 100vw;
+        height: min(calc(100vw * 9 / 16), 700px);
+      }
+
+      .article-youtube > iframe {
+        width: 100%;
+        height: 100%;
+      }
+
+      .article {
+        width: 1000px;
+        height: 400px;
+        display: flex;
+        justify-content: space-between;
+        margin-left: calc(-500px + 50%);
+      }
+
+      .article > .news {
+        width: 400px;
+        margin: 50px;
+      }
+    </style>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>main page</title>
+  </head>
+  <body>
+    <div class="article-youtube">
+      <iframe
+        src="https://www.youtube.com/embed/jaqVjS4hhyw?autoplay=1&mute=1&loop=1&playlist=jaqVjS4hhyw&controls=0&modestbranding=1&disablekb=1"
+        frameborder="0"
+        allowfullscreen="false"
+      ></iframe>
+    </div>
+    <div class="article">
+      <div class="news" id="best-article">인기 게시글</div>
+      <div class="news" id="new-comment">최신 댓글</div>
+    </div>
+  </body>
+</html>

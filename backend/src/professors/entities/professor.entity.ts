@@ -11,7 +11,7 @@ export class Professor {
   major: string;
 
   @Column()
-  phone: string;
+  contact: string;
 
   @Column()
   email: string;

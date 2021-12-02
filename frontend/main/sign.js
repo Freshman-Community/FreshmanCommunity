@@ -1,0 +1,73 @@
+function checkEmpty(name) {
+  const elems = document.getElementsByName(name);
+
+  elems.forEach((elem) => {
+    if (elem.value) elem.classList.add('inserted');
+    else elem.classList.remove('inserted');
+  });
+}
+
+async function validateUsername() {
+  const username = document.querySelector('#username');
+  const exist = await fetch(`/api/users/exist/${username.value}`);
+  if ((await exist.json()) === false) {
+    username.classList.add('warning');
+    return false;
+  } else {
+    username.classList.remove('warning');
+    return true;
+  }
+}
+
+function validateSignin() {
+  const username = document.querySelector('#username').value;
+  const password = document.querySelector('#password').value;
+
+  if (username === '') alert('아이디를 입력해주세요.');
+  else if (password === '') alert('비밀번호를 입력해주세요.');
+  else return true;
+  return false;
+}
+
+async function validateSignup() {
+  const username = document.querySelector('#username').value;
+  const password = document.querySelector('#password').value;
+  const rePassword = document.querySelector('#re-password').value;
+  const nickname = document.querySelector('#nickname').value;
+  const major = document.querySelector('#major').value;
+  const enteredYear = document.querySelector('#entered-year').value;
+
+  if (username === null) alert('아이디를 입력해주세요.');
+  else if (password === null) alert('비밀번호를 입력해주세요.');
+  else if (rePassword === null) alert('확인 비밀번호를 입력해주세요.');
+  else if (nickname === null) alert('닉네임을 입력해주세요.');
+  else if (major === '') alert('학과를 입력해주세요.');
+  else if (enteredYear === '') alert('학번을 입력해주세요.');
+  else if (await this.validateUsername()) alert('이미 존재하는 아이디입니다.');
+  else if (password !== rePassword)
+    alert('비밀번호와 확인 비밀번호가 일치하지 않습니다.');
+  else return true;
+  return false;
+}
+
+async function trySignin() {
+  if (!validateSignin()) return false;
+
+  const signinData = new URLSearchParams();
+  signinData.append('username', document.querySelector('#username').value);
+  signinData.append('password', document.querySelector('#password').value);
+  const signin = await fetch('/api/users/login', {
+    method: 'post',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: signinData,
+  });
+  if (signin.ok) history.back();
+  else {
+    alert('아이디 혹은 비밀번호가 일치하지 않습니다.');
+    document.querySelector('#username').innerHTML = '';
+    document.querySelector('#password').innerHTML = '';
+    return false;
+  }
+}

@@ -5,7 +5,6 @@ import { UsersModule } from './users/users.module';
 import { ArticlesModule } from './articles/articles.module';
 import { ProfessorsModule } from './professors/professors.module';
 import { CommentsModule } from './comments/comments.module';
-import { AuthModule } from './auth/auth.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { User } from './users/entities/user.entity';
 import { Article } from './articles/entities/article.entity';
@@ -28,7 +27,6 @@ import { Comment } from './comments/entities/comment.entity';
     ArticlesModule,
     ProfessorsModule,
     CommentsModule,
-    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],
