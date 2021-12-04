@@ -12,7 +12,7 @@ async function validateUsername() {
   const exist = await fetch(
     `https://seheon.email/api/users/exist/${username.value}`,
     {
-      mode: cors,
+      mode: 'cors',
     }
   );
   if ((await exist.json()) === false) {

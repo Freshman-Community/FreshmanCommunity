@@ -18,13 +18,21 @@ async function bootstrap() {
       name: 'FRESH_SESSIONID',
       proxy: true,
       secret: process.env.SESSION_SECRET,
+      resave: true,
+      saveUninitialized: true,
     }),
   );
   app.setGlobalPrefix('api');
   app.enableCors({
-    origin: 'https://seheon.email',
+    origin: ['https://seheon.email', 'https://seheon.email:443'],
     credentials: true,
+    allowedHeaders: [
+      'Content-Type',
+      'Accept',
+      'X-Requested-With',
+      'remember-me',
+    ],
   });
-  await app.listen(3000);
+  await app.listen(443);
 }
 bootstrap();

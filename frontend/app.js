@@ -9,6 +9,9 @@ async function logout() {
 async function generateRandomTip() {
   const res = await fetch('https://seheon.email/api', {
     mode: 'cors',
+    headers: {
+      Origin: 'https://seheon.email',
+    },
   });
   const tip = await res.json();
   const tipSpan = document.querySelector('div.tip > span');
