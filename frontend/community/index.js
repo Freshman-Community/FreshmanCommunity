@@ -4,7 +4,7 @@ async function queryArticles(offset, limit) {
     {
       mode: 'cors',
       headers: {
-        ookie: `SESSION_ID=${window.localStorage.getItem('FRESH_SESSIONID')}`,
+        cookie: `SESSION_ID=${window.localStorage.getItem('FRESH_SESSIONID')}`,
       },
     }
   );

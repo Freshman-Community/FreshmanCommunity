@@ -6,7 +6,7 @@ async function thumbUpDown(professorId) {
       credentials: 'include',
       mode: 'cors',
       headers: {
-        ookie: `SESSION_ID=${window.localStorage.getItem('FRESH_SESSIONID')}`,
+        cookie: `SESSION_ID=${window.localStorage.getItem('FRESH_SESSIONID')}`,
       },
     }
   );
@@ -27,7 +27,7 @@ async function getThumbs(professorId) {
     {
       mode: 'cors',
       headers: {
-        ookie: `SESSION_ID=${window.localStorage.getItem('FRESH_SESSIONID')}`,
+        cookie: `SESSION_ID=${window.localStorage.getItem('FRESH_SESSIONID')}`,
       },
     }
   );

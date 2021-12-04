@@ -14,10 +14,10 @@ async function queryArticle(articleId) {
   const res = await fetch(`https://seheon.email/api/articles/${articleId}`, {
     mode: 'cors',
     headers: {
-      ookie: `SESSION_ID=${window.localStorage.getItem('FRESH_SESSIONID')}`,
+      cookie: `SESSION_ID=${window.localStorage.getItem('FRESH_SESSIONID')}`,
     },
     headers: {
-      ookie: `SESSION_ID=${window.localStorage.getItem('FRESH_SESSIONID')}`,
+      cookie: `SESSION_ID=${window.localStorage.getItem('FRESH_SESSIONID')}`,
     },
   });
   return await res.json();
@@ -49,7 +49,7 @@ async function queryComment(articleId) {
   const res = await fetch(`https://seheon.email/api/comments/${articleId}`, {
     mode: 'cors',
     headers: {
-      ookie: `SESSION_ID=${window.localStorage.getItem('FRESH_SESSIONID')}`,
+      cookie: `SESSION_ID=${window.localStorage.getItem('FRESH_SESSIONID')}`,
     },
   });
   const [comments, numberOfComments] = await res.json();
@@ -102,7 +102,7 @@ async function postComment(articleId) {
     credentials: 'include',
     mode: 'cors',
     headers: {
-      ookie: `SESSION_ID=${window.localStorage.getItem('FRESH_SESSIONID')}`,
+      cookie: `SESSION_ID=${window.localStorage.getItem('FRESH_SESSIONID')}`,
     },
   });
   if (post.ok) location.reload();
@@ -123,7 +123,9 @@ async function likeUpArticle(articleId) {
         credentials: 'include',
         mode: 'cors',
         headers: {
-          ookie: `SESSION_ID=${window.localStorage.getItem('FRESH_SESSIONID')}`,
+          cookie: `SESSION_ID=${window.localStorage.getItem(
+            'FRESH_SESSIONID'
+          )}`,
         },
       }
     );
@@ -148,7 +150,7 @@ async function likeUpComment(commentId) {
       credentials: 'include',
       mode: 'cors',
       headers: {
-        ookie: `SESSION_ID=${window.localStorage.getItem('FRESH_SESSIONID')}`,
+        cookie: `SESSION_ID=${window.localStorage.getItem('FRESH_SESSIONID')}`,
       },
     }
   );

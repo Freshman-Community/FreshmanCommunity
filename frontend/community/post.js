@@ -10,7 +10,7 @@ async function submitForm() {
     credentials: 'include',
     mode: 'cors',
     headers: {
-      ookie: `SESSION_ID=${window.localStorage.getItem('FRESH_SESSIONID')}`,
+      cookie: `SESSION_ID=${window.localStorage.getItem('FRESH_SESSIONID')}`,
     },
   });
   if (post.ok) location.replace(document.referrer);
@@ -28,7 +28,7 @@ window.onload = async () => {
     credentials: 'include',
     mode: 'cors',
     headers: {
-      ookie: `SESSION_ID=${window.localStorage.getItem('FRESH_SESSIONID')}`,
+      cookie: `SESSION_ID=${window.localStorage.getItem('FRESH_SESSIONID')}`,
     },
   });
   if (user.ok) {

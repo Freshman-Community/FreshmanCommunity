@@ -2,7 +2,7 @@ async function queryBestArticle() {
   const res = await fetch(`https://seheon.email/api/articles/best`, {
     mode: 'cors',
     headers: {
-      ookie: `SESSION_ID=${window.localStorage.getItem('FRESH_SESSIONID')}`,
+      cookie: `SESSION_ID=${window.localStorage.getItem('FRESH_SESSIONID')}`,
     },
   });
   const [articles, numberOfArticles] = await res.json();
@@ -39,7 +39,7 @@ async function queryRecentComments() {
   const res = await fetch(`https://seheon.email/api/comments?limit=5`, {
     mode: 'cors',
     headers: {
-      ookie: `SESSION_ID=${window.localStorage.getItem('FRESH_SESSIONID')}`,
+      cookie: `SESSION_ID=${window.localStorage.getItem('FRESH_SESSIONID')}`,
     },
   });
   const [comments, numberOfComments] = await res.json();

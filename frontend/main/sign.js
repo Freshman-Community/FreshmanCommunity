@@ -14,7 +14,7 @@ async function validateUsername() {
     {
       mode: 'cors',
       headers: {
-        ookie: `SESSION_ID=${window.localStorage.getItem('FRESH_SESSIONID')}`,
+        cookie: `SESSION_ID=${window.localStorage.getItem('FRESH_SESSIONID')}`,
       },
     }
   );
@@ -73,13 +73,13 @@ async function trySignin() {
     body: signinData,
     mode: 'cors',
     headers: {
-      ookie: `SESSION_ID=${window.localStorage.getItem('FRESH_SESSIONID')}`,
+      cookie: `SESSION_ID=${window.localStorage.getItem('FRESH_SESSIONID')}`,
     },
   });
   if (signin.ok) {
     window.localStorage.setItem(
       'FRESH_SESSIONID',
-      (await signin.json()).cookieValue
+      (await signin.json()).ccookieValue
     );
     location.replace('../app.html');
   } else {
@@ -110,7 +110,7 @@ async function trySignup() {
     body: signupData,
     mode: 'cors',
     headers: {
-      ookie: `SESSION_ID=${window.localStorage.getItem('FRESH_SESSIONID')}`,
+      cookie: `SESSION_ID=${window.localStorage.getItem('FRESH_SESSIONID')}`,
     },
   });
   if (signup.ok) {
