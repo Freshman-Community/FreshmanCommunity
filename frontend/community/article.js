@@ -13,6 +13,7 @@ function getArticleId() {
 async function queryArticle(articleId) {
   const res = await fetch(`http://seheon.email/api/articles/${articleId}`, {
     mode: 'cors',
+    headers: { 'Access-Control-Request-Origin': 'http://seheon.email' },
   });
   return await res.json();
 }
@@ -42,6 +43,7 @@ async function loadArticle(articleId) {
 async function queryComment(articleId) {
   const res = await fetch(`http://seheon.email/api/comments/${articleId}`, {
     mode: 'cors',
+    headers: { 'Access-Control-Request-Origin': 'http://seheon.email' },
   });
   const [comments, numberOfComments] = await res.json();
   return { comments, numberOfComments };
@@ -92,6 +94,7 @@ async function postComment(articleId) {
     body: commentData,
     credentials: 'include',
     mode: 'cors',
+    headers: { 'Access-Control-Request-Origin': 'http://seheon.email' },
   });
   if (post.ok) location.reload();
   else if (post.status === 403) {
@@ -110,6 +113,7 @@ async function likeUpArticle(articleId) {
       {
         credentials: 'include',
         mode: 'cors',
+        headers: { 'Access-Control-Request-Origin': 'http://seheon.email' },
       }
     );
     const post = await res.json();
@@ -132,6 +136,7 @@ async function likeUpComment(commentId) {
     {
       credentials: 'include',
       mode: 'cors',
+      headers: { 'Access-Control-Request-Origin': 'http://seheon.email' },
     }
   );
   const post = await res.json();
