@@ -4,7 +4,8 @@ import { CanActivate, ExecutionContext, Injectable } from '@nestjs/common';
 export class SessionGuard implements CanActivate {
   canActivate(context: ExecutionContext): boolean {
     const req = context.switchToHttp().getRequest();
-
-    return !!req.session.uid;
+    const sessionid = req.cookies['SESSION_ID'];
+    console.log(sessionid);
+    return true;
   }
 }

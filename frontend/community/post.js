@@ -9,6 +9,9 @@ async function submitForm() {
     body: formData,
     credentials: 'include',
     mode: 'cors',
+    headers: {
+      ookie: `SESSION_ID=${window.localStorage.getItem('FRESH_SESSIONID')}`,
+    },
   });
   if (post.ok) location.replace(document.referrer);
   else if (post.status === 403) {
@@ -24,6 +27,9 @@ window.onload = async () => {
   const user = await fetch('https://seheon.email/api/users/me', {
     credentials: 'include',
     mode: 'cors',
+    headers: {
+      ookie: `SESSION_ID=${window.localStorage.getItem('FRESH_SESSIONID')}`,
+    },
   });
   if (user.ok) {
     document

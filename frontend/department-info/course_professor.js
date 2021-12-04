@@ -5,6 +5,9 @@ async function thumbUpDown(professorId) {
       method: 'post',
       credentials: 'include',
       mode: 'cors',
+      headers: {
+        ookie: `SESSION_ID=${window.localStorage.getItem('FRESH_SESSIONID')}`,
+      },
     }
   );
   const post = await res.json();
@@ -23,6 +26,9 @@ async function getThumbs(professorId) {
     `https://seheon.email/api/professor-likes/${professorId}`,
     {
       mode: 'cors',
+      headers: {
+        ookie: `SESSION_ID=${window.localStorage.getItem('FRESH_SESSIONID')}`,
+      },
     }
   );
   const post = await res.json();

@@ -13,6 +13,9 @@ async function validateUsername() {
     `https://seheon.email/api/users/exist/${username.value}`,
     {
       mode: 'cors',
+      headers: {
+        ookie: `SESSION_ID=${window.localStorage.getItem('FRESH_SESSIONID')}`,
+      },
     }
   );
   if ((await exist.json()) === false) {
@@ -69,6 +72,9 @@ async function trySignin() {
     },
     body: signinData,
     mode: 'cors',
+    headers: {
+      ookie: `SESSION_ID=${window.localStorage.getItem('FRESH_SESSIONID')}`,
+    },
   });
   if (signin.ok) {
     window.localStorage.setItem(
@@ -103,6 +109,9 @@ async function trySignup() {
     },
     body: signupData,
     mode: 'cors',
+    headers: {
+      ookie: `SESSION_ID=${window.localStorage.getItem('FRESH_SESSIONID')}`,
+    },
   });
   if (signup.ok) {
     alert('회원가입이 완료되었습니다. 로그인해주세요.');

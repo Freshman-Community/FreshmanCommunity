@@ -2,6 +2,12 @@ async function logout() {
   const logoutQuery = await fetch('https://seheon.email/api/users/logout', {
     credentials: 'include',
     mode: 'cors',
+    headers: {
+      ookie: `SESSION_ID=${window.localStorage.getItem('FRESH_SESSIONID')}`,
+    },
+    headers: {
+      ookie: `SESSION_ID=${window.localStorage.getItem('FRESH_SESSIONID')}`,
+    },
   });
   if (logoutQuery.status === 200) location.reload();
 }
@@ -10,7 +16,10 @@ async function generateRandomTip() {
   const res = await fetch('https://seheon.email/api', {
     mode: 'cors',
     headers: {
-      Origin: 'https://seheon.email',
+      ookie: `SESSION_ID=${window.localStorage.getItem('FRESH_SESSIONID')}`,
+    },
+    headers: {
+      ookie: `SESSION_ID=${window.localStorage.getItem('FRESH_SESSIONID')}`,
     },
   });
   const tip = await res.json();
@@ -25,6 +34,12 @@ async function checkLogin() {
   const user = await fetch('https://seheon.email/api/users/me', {
     credentials: 'include',
     mode: 'cors',
+    headers: {
+      ookie: `SESSION_ID=${window.localStorage.getItem('FRESH_SESSIONID')}`,
+    },
+    headers: {
+      ookie: `SESSION_ID=${window.localStorage.getItem('FRESH_SESSIONID')}`,
+    },
   });
 
   if (user.ok) {

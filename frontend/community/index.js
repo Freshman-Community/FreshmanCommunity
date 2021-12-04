@@ -3,6 +3,9 @@ async function queryArticles(offset, limit) {
     `https://seheon.email/api/articles?offset=${offset}&limit=${limit}`,
     {
       mode: 'cors',
+      headers: {
+        ookie: `SESSION_ID=${window.localStorage.getItem('FRESH_SESSIONID')}`,
+      },
     }
   );
   const [articles, numberOfArticles] = await res.json();
