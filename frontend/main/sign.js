@@ -70,7 +70,7 @@ async function trySignin() {
     body: signinData,
     mode: 'cors',
   });
-  if (signin.ok) location.replace('./app.html');
+  if (signin.ok) location.replace('../app.html');
   else {
     alert('아이디 혹은 비밀번호가 일치하지 않습니다.');
     document.querySelector('#username').innerHTML = '';
@@ -101,7 +101,7 @@ async function trySignup() {
   });
   if (signup.ok) {
     alert('회원가입이 완료되었습니다. 로그인해주세요.');
-    location.replace('./main/signin.html');
+    location.replace('../main/signin.html');
   } else {
     alert(
       '회원가입이 처리되지 않았습니다. 입력 데이터를 다시 한 번 확인해주세요.'

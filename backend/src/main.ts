@@ -24,7 +24,7 @@ async function bootstrap() {
   );
   app.setGlobalPrefix('api');
   app.enableCors({
-    origin: ['https://seheon.email', 'https://seheon.email:443'],
+    origin: true,
     credentials: true,
     allowedHeaders: [
       'Content-Type',
