@@ -26,8 +26,8 @@ async function checkLogin() {
     signinDiv.innerHTML = (await user.json()).nickname;
     signupDiv.innerHTML = '<a onClick="logout()">로그아웃</a>';
   } else {
-    signinDiv.innerHTML = '<a href="/main/signin.html">로그인</a>';
-    signupDiv.innerHTML = '<a href="/main/signup.html">회원가입</a>';
+    signinDiv.innerHTML = '<a href="./main/signin.html">로그인</a>';
+    signupDiv.innerHTML = '<a href="./main/signup.html">회원가입</a>';
   }
 }
 
