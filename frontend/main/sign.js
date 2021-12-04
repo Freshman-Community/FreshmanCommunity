@@ -71,7 +71,9 @@ async function trySignin() {
     mode: 'cors',
   });
   if (signin.ok) {
-    document.cookie = `FRESH_SESSIONID=${await signin.json()}; SameSite=None; Secure`;
+    document.cookie = `FRESH_SESSIONID=${
+      (await signin.json()).cookieValue
+    }; SameSite=None; Secure`;
     location.replace('../app.html');
   } else {
     alert('아이디 혹은 비밀번호가 일치하지 않습니다.');
