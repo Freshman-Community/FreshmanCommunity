@@ -11,20 +11,27 @@ export class ArticlesService {
     @InjectRepository(Article) private articlesRepository: Repository<Article>,
   ) {}
 
-  create(createArticleDto: CreateArticleDto) {
+  create(createArticleDto: CreateArticleDto, userId: number) {
     const article = new Article();
 
     article.title = createArticleDto.title;
     article.content = createArticleDto.content;
-    article.anonymity = createArticleDto.anonymity;
-    return this.articlesRepository.create(createArticleDto);
+    article.anonymity = createArticleDto.anonymity === 'true' ? true : false;
+    article.authorId = userId;
+    return this.articlesRepository.save(article);
   }
 
-  findAll(offset: number, limit: number) {
+  findAll(offset: number, limit: number): Promise<[Article[], number]> {
     return this.articlesRepository
       .createQueryBuilder('article')
+      .leftJoinAndSelect('article.author', 'user')
       .offset(offset)
-      .limit(limit);
+      .limit(limit)
+      .getManyAndCount();
+  }
+
+  countAll() {
+    return this.articlesRepository.count();
   }
 
   findBest() {

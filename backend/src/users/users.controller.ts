@@ -12,6 +12,7 @@ import {
   Res,
   ParseIntPipe,
   Session,
+  ConflictException,
 } from '@nestjs/common';
 import { UsersService } from './users.service';
 import { CreateUserDto } from './dto/create-user.dto';
@@ -53,11 +54,9 @@ export class UsersController {
   }
 
   @Post()
-  async create(@Session() session, @Body() createUserDto: CreateUserDto) {
+  async create(@Body() createUserDto: CreateUserDto) {
     const user = await this.usersService.create(createUserDto);
-    if (!user) return null;
-    else session.uid = user.id;
-    return user;
+    if (!user) return new ConflictException();
   }
 
   @Get()

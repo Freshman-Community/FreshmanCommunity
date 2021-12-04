@@ -8,7 +8,10 @@ import {
   Delete,
   Query,
   ParseIntPipe,
+  UseGuards,
+  Session,
 } from '@nestjs/common';
+import { SessionGuard } from 'src/users/guards/session.guard';
 import { ArticlesService } from './articles.service';
 import { CreateArticleDto } from './dto/create-article.dto';
 import { UpdateArticleDto } from './dto/update-article.dto';
@@ -18,16 +21,22 @@ export class ArticlesController {
   constructor(private readonly articlesService: ArticlesService) {}
 
   @Post()
-  create(@Body() createArticleDto: CreateArticleDto) {
-    return this.articlesService.create(createArticleDto);
+  @UseGuards(SessionGuard)
+  create(@Body() createArticleDto: CreateArticleDto, @Session() session) {
+    return this.articlesService.create(createArticleDto, session.uid);
   }
 
   @Get()
-  findAll(
+  async findAll(
     @Query('offset', ParseIntPipe) offset: number,
     @Query('limit', ParseIntPipe) limit: number,
   ) {
-    return this.articlesService.findAll(offset, limit);
+    return await this.articlesService.findAll(offset, limit);
+  }
+
+  @Get('count')
+  countAll() {
+    return this.articlesService.countAll();
   }
 
   @Get('best')

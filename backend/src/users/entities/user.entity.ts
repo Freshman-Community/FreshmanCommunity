@@ -4,9 +4,6 @@ import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 @Entity()
 export class User {
   @PrimaryGeneratedColumn()
-  @OneToMany((type) => Article, (article) => article.writerId, {
-    cascade: false,
-  })
   id: number;
 
   @Column()
@@ -23,4 +20,9 @@ export class User {
 
   @Column()
   enteredYear: number;
+
+  @OneToMany((type) => Article, (article) => article.author, {
+    cascade: false,
+  })
+  articles: Article[];
 }

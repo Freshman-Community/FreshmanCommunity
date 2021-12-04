@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script src="post.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Raleway"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Nanum+Gothic"
+    />
+    <link rel="stylesheet" href="post.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <section class="info-section">
+      <h1>자유게시판에 글쓰기</h1>
+      <p>
+        차별, 비하, 혐오 및 초상권, 저작권 침해 게시물은 민, 형사상의 책임을 질
+        수 있습니다.
+      </p>
+    </section>
+    <section class="post-form-section">
+      <form action="/api/articles">
+        <div class="noncontent">
+          <div class="title">
+            <input type="text" name="title" id="title" placeholder="Title" />
+            <span class="focus-bolder"></span>
+          </div>
+          <div class="anonymity">
+            <label for="anonymity">익명</label>
+            <input type="checkbox" name="anonymity" id="anonymity" />
+          </div>
+        </div>
+        <div class="content">
+          <textarea
+            name="content"
+            id="content"
+            placeholder="content"
+          ></textarea>
+          <span class="focus-bolder"></span>
+        </div>
+      </form>
+    </section>
+    <section class="post-section">
+      <button class="submit">Post</button>
+      <button class="cancle">Cancle</button>
+    </section>
+  </body>
+</html>

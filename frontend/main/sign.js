@@ -43,7 +43,8 @@ async function validateSignup() {
   else if (nickname === null) alert('닉네임을 입력해주세요.');
   else if (major === '') alert('학과를 입력해주세요.');
   else if (enteredYear === '') alert('학번을 입력해주세요.');
-  else if (await this.validateUsername()) alert('이미 존재하는 아이디입니다.');
+  else if (!(await this.validateUsername()))
+    alert('이미 존재하는 아이디입니다.');
   else if (password !== rePassword)
     alert('비밀번호와 확인 비밀번호가 일치하지 않습니다.');
   else return true;
@@ -63,11 +64,41 @@ async function trySignin() {
     },
     body: signinData,
   });
-  if (signin.ok) history.back();
+  if (signin.ok) location.replace('/app.html');
   else {
     alert('아이디 혹은 비밀번호가 일치하지 않습니다.');
     document.querySelector('#username').innerHTML = '';
     document.querySelector('#password').innerHTML = '';
+    return false;
+  }
+}
+
+async function trySignup() {
+  if (!(await validateSignup())) return false;
+
+  const signupData = new URLSearchParams();
+  signupData.append('username', document.querySelector('#username').value);
+  signupData.append('password', document.querySelector('#password').value);
+  signupData.append('nickname', document.querySelector('#nickname').value);
+  signupData.append('major', document.querySelector('#major').value);
+  signupData.append(
+    'enteredYear',
+    document.querySelector('#entered-year').value
+  );
+  const signup = await fetch('/api/users', {
+    method: 'post',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: signupData,
+  });
+  if (signup.ok) {
+    alert('회원가입이 완료되었습니다. 로그인해주세요.');
+    location.replace('/main/signin.html');
+  } else {
+    alert(
+      '회원가입이 처리되지 않았습니다. 입력 데이터를 다시 한 번 확인해주세요.'
+    );
     return false;
   }
 }

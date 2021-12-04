@@ -1,0 +1,28 @@
+body {
+  font-family: 'Raleway', 'Nanum Gothic';
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th {
+  background-color: #8f8f8f;
+  font-size: 14px;
+  color: white;
+  height: 30px;
+}
+
+td {
+  height: 20px;
+}
+
+th,
+td {
+  font-size: 14px;
+  text-align: center;
+}

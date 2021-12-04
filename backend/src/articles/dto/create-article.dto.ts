@@ -8,5 +8,5 @@ export class CreateArticleDto {
   readonly content: string;
 
   @IsBooleanString()
-  readonly anonymity: boolean;
+  readonly anonymity: string;
 }

@@ -13,8 +13,11 @@ export class Article {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @ManyToOne((type) => User, (user) => user.id, { cascade: false })
-  writerId: number;
+  @Column()
+  authorId: number;
+
+  @ManyToOne((type) => User, (author) => author.articles, { cascade: false })
+  author: User;
 
   @CreateDateColumn()
   createdAt: Date;

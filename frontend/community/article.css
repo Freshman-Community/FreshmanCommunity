@@ -1,0 +1,70 @@
+body {
+  font-family: 'Raleway', 'Nanum Gothic';
+  margin-left: calc(-500px + 50%);
+  display: flex;
+}
+
+section {
+  width: 700px;
+  border-right: 1px #8f8f8f solid;
+  padding: 0 20px;
+}
+
+aside {
+  padding-left: 20px;
+  width: 300px;
+}
+
+h1.title {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+h1.title > span.article-id {
+  font-size: 18px;
+  font-weight: 300;
+  color: #8f8f8f;
+}
+
+article {
+  margin-top: 30px;
+  border-bottom: 1px solid #8f8f8f;
+}
+
+article > header > div.info,
+article.comment > header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+span.view-count,
+span.like-count {
+  font-size: 14px;
+  font-weight: 200;
+}
+
+span.like-button {
+  cursor: pointer;
+  font-size: 16px;
+}
+
+span.author {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+span.create-at {
+  font-size: 12px;
+  font-weight: 100;
+  color: #8f8f8f;
+}
+
+article > p {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+aside {
+  width: 300px;
+}

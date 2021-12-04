@@ -1,191 +1,368 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>교수님, 강의평 페이지</title>
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link type="text/css" rel="stylesheet" href="WEB_2.css">
-    </head>
-    <body>
+  <head>
+    <title>교수님, 강의평 페이지</title>
+    <link type="text/css" rel="stylesheet" href="WEB_2.css" />
+  </head>
+  <body>
     <section class="section">
-            <header><h2>전임교수</h2></header>
-            <hr>
-            <table border=1>
-                <tr><td style="background-color: rgb(255, 255, 255); border-width: 0;"><img src="media/이길흥교수님.jpg" width="100" height="120">
-                    <table>
-                        <tr><td><input type='button'
-                            onclick='count("plus")'
-                            class="material-icons" value='thumb_up'/></td>
-                        <td id="result">121</td></tr>
-                    </table>
-                <td style="border-right: none; border-left: none; background-color: rgb(255, 255, 255);">
-                <h3>이길흥</h3>
-                전 공 : 컴퓨터네트워크,인터넷서비스,<br>
-                 센서망,통신망관리<br>
-                 T E L : 02-970-6704<br>
-                E-mail : khlee@seoultech.ac.kr<br>
-                연구실 : 미래관 333호<br><br>
+      <header><h2>전임교수</h2></header>
+      <hr />
+      <table border="1">
+        <tr>
+          <td style="background-color: rgb(255, 255, 255); border-width: 0">
+            <img src="media/이길흥교수님.jpg" width="100" height="120" />
+            <table>
+              <tr>
+                <td>
+                  <button type="button" style="font-size: 24px">👍</button>
                 </td>
-                 <td style="background-color: rgb(255, 255, 255); border-width: 0;"><img src="media/김재수교수님.jpg" width="100" height="120">
-                    <table>
-                        <tr><td><button type="button"><span class="material-icons">thumb_up</span></button></td>
-                            <td><strong>134</strong></td></tr>
-                    </table></td>
-                <td style="border-right: none; border-left: none; background-color: rgb(255, 255, 255);">
-                <h3>김재수(학과장)</h3>
-                전 공 : 계산지능,인공지능 지식공학<br>
-                T E L : 02-970-6706<br>
-                E-mail : jskim@seoultech.ac.kr<br>
-                 연구실 : 미래관 219호<br><br>
-                </td></tr>
-                <tr><td style="background-color: rgb(255, 255, 255); border-width: 0;"><img src="media/신용현교수님.jpg" width="100" height="120">
-                    <table>
-                        <tr><td><button type="button"><span class="material-icons">thumb_up</span></button></td>
-                        <td><strong>181</strong></td></tr>
-                    </table>
-                <td style="border-right: none; border-left: none; background-color: rgb(255, 255, 255);">
-                <h3>신용현</h3>
-                전 공 : 운영체제,시스템 소프트웨어,웹<br>
-                 시스템<br>
-                 T E L : 02-970-6709<br>
-                E-mail : yshin@seoultech.ac.kr<br>
-                연구실 : 미래관 335호<br><br>
-                </td>
-                 <td style="background-color: rgb(255, 255, 255); border-width: 0;"><img src="media/차광호교수님.jpg" width="100" height="120">
-                    <table>
-                        <tr><td><button type="button"><span class="material-icons">thumb_up</span></button></td>
-                        <td><strong>180</strong></td></tr>
-                    </table></td>
-                <td style="border-right: none; border-left: none; background-color: rgb(255, 255, 255);">
-                <h3>차광호</h3>
-                전 공 : 멀티미디어 시스템,시공간 데이<br>
-                터베이스,불확실 데이터베이스<br>
-                T E L : 02-970-6710<br>
-                E-mail : ghcha@seoultech.ac.kr<br>
-                 연구실 : 미래관 430호<br><br>
-                </td></tr>
-                <tr><td style="background-color: rgb(255, 255, 255); border-width: 0;"><img src="media/박종혁교수님.jpg" width="100" height="120">
-                    <table>
-                        <tr><td><button type="button"><span class="material-icons">thumb_up</span></button></td>
-                        <td><strong>156</strong></td></tr>
-                    </table>
-                <td style="border-right: none; border-left: none; background-color: rgb(255, 255, 255);">
-                <h3>박종혁</h3>
-                전 공 : 정보보호,통합보안,Ubi-Com<br>
-                T E L : 02-970-6702<br>
-                E-mail : jhpark@seoultech.ac.kr<br>
-                연구실 : 미래관 325호<br><br>
-                </td>
-                 <td style="background-color: rgb(255, 255, 255); border-width: 0;"><img src="media/이창훈교수님.jpg" width="100" height="120">
-                    <table>
-                        <tr><td><button type="button"><span class="material-icons">thumb_up</span></button></td>
-                        <td><strong>172</strong></td></tr>
-                    </table></td>
-                <td style="border-right: none; border-left: none; background-color: rgb(255, 255, 255);">
-                <h3>이창훈</h3>
-                전 공 : 정보보호,암호학,디지털포렌식<br>
-                ,사이버보안<br>
-                T E L : 02-970-6712<br>
-                E-mail : chlee@seoultech.ac.kr<br>
-                 연구실 : 미래관 329호<br><br>
-                </td></tr>
-                <tr><td style="background-color: rgb(255, 255, 255); border-width: 0;"><img src="media/권태수교수님.jpg" width="100" height="120">
-                    <table>
-                        <tr><td><button type="button"><span class="material-icons">thumb_up</span></button></td>
-                        <td><strong>159</strong></td></tr>
-                    </table>
-                <td style="border-right: none; border-left: none; background-color: rgb(255, 255, 255);">
-                <h3>권태수(학과장)</h3>
-                전 공 : 획률기하,기계학습,통신네트워<br>
-                크<br>
-                 T E L : 02-970-6716<br>
-                E-mail : tskwon@seoultech.ac.kr<br>
-                연구실 : 미래관 330호<br><br>
-                </td>
-                 <td style="background-color: rgb(255, 255, 255); border-width: 0;"><img src="media/손일수교수님.jpg" width="100" height="120">
-                    <table>
-                        <tr><td><button type="button"><span class="material-icons">thumb_up</span></button></td>
-                        <td><strong>131</strong></td></tr>
-                    </table></td>
-                <td style="border-right: none; border-left: none; background-color: rgb(255, 255, 255);">
-                <h3>손일수(인증PD)</h3>
-                전 공 : 무선통신네트워크,사물인터넷,<br>
-                분신최적화 알고리즘<br>
-                T E L : 02-970-6713<br>
-                E-mail : isohn@seoultech.ac.kr<br>
-                 연구실 : 미래관 324호<br><br>
-                </td></tr>
-                <tr><td style="background-color: rgb(255, 255, 255); border-width: 0;"><img src="media/한지형교수님.jpg" width="100" height="120">
-                    <table>
-                        <tr><td><button type="button"><span class="material-icons">thumb_up</span></button></td>
-                        <td><strong>137</strong></td></tr>
-                    </table>
-                <td style="border-right: none; border-left: none; background-color: rgb(255, 255, 255);">
-                <h3>한지형</h3>
-                전 공 : 지능로봇,인간-로봇 상호작용,<br>
-                인공지능,기계학습<br>
-                T E L : 02-970-6705<br>
-                E-mail : jnhan@seoultech.ac.kr<br>
-                연구실 : 미래관 334호<br><br>
-                </td>
-                 <td style="background-color: rgb(255, 255, 255); border-width: 0;"><img src="media/강동완교수님.jpg" width="100" height="120">
-                    <table>
-                        <tr><td><button type="button"><span class="material-icons">thumb_up</span></button></td>
-                        <td><strong>176</strong></td></tr>
-                    </table></td>
-                <td style="border-right: none; border-left: none; background-color: rgb(255, 255, 255);">
-                <h3>강동완</h3>
-                전 공 : 컴퓨터그래픽스,영상처리,감성<br>
-                컴퓨팅<br>
-                T E L : 02-970-6719<br>
-                E-mail : dongwann@seoultech.ac.kr<br>
-                연구실 : 미래관 328호<br><br>
-                </td></tr>
-                <tr><td style="background-color: rgb(255, 255, 255); border-width: 0;"><img src="media/박래혁교수님.jpg" width="100" height="120">
-                    <table>
-                        <tr><td><button type="button"><span class="material-icons">thumb_up</span></button></td>
-                        <td><strong>185</strong></td></tr>
-                    </table>
-                <td style="border-right: none; border-left: none; background-color: rgb(255, 255, 255);">
-                <h3>박래혁</h3>
-                전 공 : 스마트 그리드,사물 인터넷,<br>
-                지능형 컴퓨팅<br>
-                 T E L : 02-970-6703<br>
-                E-mail : ihpark@seoultech.ac.kr<br>
-                연구실 : 미래관 326호<br><br>
-                </td>
-                 <td style="background-color: rgb(255, 255, 255); border-width: 0;"><img src="media/김진대교수님.jpg" width="100" height="120">
-                    <table>
-                        <tr><td><button type="button"><span class="material-icons">thumb_up</span></button></td>
-                        <td><strong>149</strong></td></tr>
-                    </table></td>
-                <td style="border-right: none; border-left: none; background-color: rgb(255, 255, 255);">
-                <h3>김진대</h3>
-                전 공 : 소프트웨어공학,프로그래밍언어<br>
-                T E L : 02-970-6717<br>
-                E-mail : jindae.kim@seoultech.ac.kr<br>
-                 연구실 : 미래관 331호<br><br>
-                </td></tr>
-                
+                <td id="result">121</td>
+              </tr>
             </table>
-            </section>
-            <script>
-                function count(type)  {
-  // 결과를 표시할 element
-  const resultElement = document.getElementById('result');
-  
-  // 현재 화면에 표시된 값
-  let number = resultElement.innerText;
-  
-  // 더하기/빼기
-  if(type === 'plus') {
-    number = parseInt(number) + 1;
-  }else  {
-    ;
-  }
-  
-  // 결과 출력
-  resultElement.innerText = number;
-}
-            </script>
-    </body>
+          </td>
+
+          <td
+            style="
+              border-right: none;
+              border-left: none;
+              background-color: rgb(255, 255, 255);
+            "
+          >
+            <h3>이길흥</h3>
+            전 공 : 컴퓨터네트워크,인터넷서비스,<br />
+            센서망,통신망관리<br />
+            T E L : 02-970-6704<br />
+            E-mail : khlee@seoultech.ac.kr<br />
+            연구실 : 미래관 333호<br /><br />
+          </td>
+          <td style="background-color: rgb(255, 255, 255); border-width: 0">
+            <img src="media/김재수교수님.jpg" width="100" height="120" />
+            <table>
+              <tr>
+                <td>
+                  <button type="button" style="font-size: 24px">👍</button>
+                </td>
+                <td><strong>134</strong></td>
+              </tr>
+            </table>
+          </td>
+          <td
+            style="
+              border-right: none;
+              border-left: none;
+              background-color: rgb(255, 255, 255);
+            "
+          >
+            <h3>김재수(학과장)</h3>
+            전 공 : 계산지능,인공지능 지식공학<br />
+            T E L : 02-970-6706<br />
+            E-mail : jskim@seoultech.ac.kr<br />
+            연구실 : 미래관 219호<br /><br />
+          </td>
+        </tr>
+        <tr>
+          <td style="background-color: rgb(255, 255, 255); border-width: 0">
+            <img src="media/신용현교수님.jpg" width="100" height="120" />
+            <table>
+              <tr>
+                <td>
+                  <button type="button">
+                    <button type="button" style="font-size: 24px">👍</button>
+                  </button>
+                </td>
+                <td><strong>181</strong></td>
+              </tr>
+            </table>
+          </td>
+
+          <td
+            style="
+              border-right: none;
+              border-left: none;
+              background-color: rgb(255, 255, 255);
+            "
+          >
+            <h3>신용현</h3>
+            전 공 : 운영체제,시스템 소프트웨어,웹<br />
+            시스템<br />
+            T E L : 02-970-6709<br />
+            E-mail : yshin@seoultech.ac.kr<br />
+            연구실 : 미래관 335호<br /><br />
+          </td>
+          <td style="background-color: rgb(255, 255, 255); border-width: 0">
+            <img src="media/차광호교수님.jpg" width="100" height="120" />
+            <table>
+              <tr>
+                <td>
+                  <button type="button">
+                    <button type="button" style="font-size: 24px">👍</button>
+                  </button>
+                </td>
+                <td><strong>180</strong></td>
+              </tr>
+            </table>
+          </td>
+          <td
+            style="
+              border-right: none;
+              border-left: none;
+              background-color: rgb(255, 255, 255);
+            "
+          >
+            <h3>차광호</h3>
+            전 공 : 멀티미디어 시스템,시공간 데이<br />
+            터베이스,불확실 데이터베이스<br />
+            T E L : 02-970-6710<br />
+            E-mail : ghcha@seoultech.ac.kr<br />
+            연구실 : 미래관 430호<br /><br />
+          </td>
+        </tr>
+        <tr>
+          <td style="background-color: rgb(255, 255, 255); border-width: 0">
+            <img src="media/박종혁교수님.jpg" width="100" height="120" />
+            <table>
+              <tr>
+                <td>
+                  <button type="button">
+                    <button type="button" style="font-size: 24px">👍</button>
+                  </button>
+                </td>
+                <td><strong>156</strong></td>
+              </tr>
+            </table>
+          </td>
+
+          <td
+            style="
+              border-right: none;
+              border-left: none;
+              background-color: rgb(255, 255, 255);
+            "
+          >
+            <h3>박종혁</h3>
+            전 공 : 정보보호,통합보안,Ubi-Com<br />
+            T E L : 02-970-6702<br />
+            E-mail : jhpark@seoultech.ac.kr<br />
+            연구실 : 미래관 325호<br /><br />
+          </td>
+          <td style="background-color: rgb(255, 255, 255); border-width: 0">
+            <img src="media/이창훈교수님.jpg" width="100" height="120" />
+            <table>
+              <tr>
+                <td>
+                  <button type="button">
+                    <button type="button" style="font-size: 24px">👍</button>
+                  </button>
+                </td>
+                <td><strong>172</strong></td>
+              </tr>
+            </table>
+          </td>
+          <td
+            style="
+              border-right: none;
+              border-left: none;
+              background-color: rgb(255, 255, 255);
+            "
+          >
+            <h3>이창훈</h3>
+            전 공 : 정보보호,암호학,디지털포렌식<br />
+            ,사이버보안<br />
+            T E L : 02-970-6712<br />
+            E-mail : chlee@seoultech.ac.kr<br />
+            연구실 : 미래관 329호<br /><br />
+          </td>
+        </tr>
+        <tr>
+          <td style="background-color: rgb(255, 255, 255); border-width: 0">
+            <img src="media/권태수교수님.jpg" width="100" height="120" />
+            <table>
+              <tr>
+                <td>
+                  <button type="button">
+                    <button type="button" style="font-size: 24px">👍</button>
+                  </button>
+                </td>
+                <td><strong>159</strong></td>
+              </tr>
+            </table>
+          </td>
+
+          <td
+            style="
+              border-right: none;
+              border-left: none;
+              background-color: rgb(255, 255, 255);
+            "
+          >
+            <h3>권태수(학과장)</h3>
+            전 공 : 획률기하,기계학습,통신네트워<br />
+            크<br />
+            T E L : 02-970-6716<br />
+            E-mail : tskwon@seoultech.ac.kr<br />
+            연구실 : 미래관 330호<br /><br />
+          </td>
+          <td style="background-color: rgb(255, 255, 255); border-width: 0">
+            <img src="media/손일수교수님.jpg" width="100" height="120" />
+            <table>
+              <tr>
+                <td>
+                  <button type="button">
+                    <button type="button" style="font-size: 24px">👍</button>
+                  </button>
+                </td>
+                <td><strong>131</strong></td>
+              </tr>
+            </table>
+          </td>
+          <td
+            style="
+              border-right: none;
+              border-left: none;
+              background-color: rgb(255, 255, 255);
+            "
+          >
+            <h3>손일수(인증PD)</h3>
+            전 공 : 무선통신네트워크,사물인터넷,<br />
+            분신최적화 알고리즘<br />
+            T E L : 02-970-6713<br />
+            E-mail : isohn@seoultech.ac.kr<br />
+            연구실 : 미래관 324호<br /><br />
+          </td>
+        </tr>
+        <tr>
+          <td style="background-color: rgb(255, 255, 255); border-width: 0">
+            <img src="media/한지형교수님.jpg" width="100" height="120" />
+            <table>
+              <tr>
+                <td>
+                  <button type="button">
+                    <button type="button" style="font-size: 24px">👍</button>
+                  </button>
+                </td>
+                <td><strong>137</strong></td>
+              </tr>
+            </table>
+          </td>
+
+          <td
+            style="
+              border-right: none;
+              border-left: none;
+              background-color: rgb(255, 255, 255);
+            "
+          >
+            <h3>한지형</h3>
+            전 공 : 지능로봇,인간-로봇 상호작용,<br />
+            인공지능,기계학습<br />
+            T E L : 02-970-6705<br />
+            E-mail : jnhan@seoultech.ac.kr<br />
+            연구실 : 미래관 334호<br /><br />
+          </td>
+          <td style="background-color: rgb(255, 255, 255); border-width: 0">
+            <img src="media/강동완교수님.jpg" width="100" height="120" />
+            <table>
+              <tr>
+                <td>
+                  <button type="button">
+                    <button type="button" style="font-size: 24px">👍</button>
+                  </button>
+                </td>
+                <td><strong>176</strong></td>
+              </tr>
+            </table>
+          </td>
+          <td
+            style="
+              border-right: none;
+              border-left: none;
+              background-color: rgb(255, 255, 255);
+            "
+          >
+            <h3>강동완</h3>
+            전 공 : 컴퓨터그래픽스,영상처리,감성<br />
+            컴퓨팅<br />
+            T E L : 02-970-6719<br />
+            E-mail : dongwann@seoultech.ac.kr<br />
+            연구실 : 미래관 328호<br /><br />
+          </td>
+        </tr>
+        <tr>
+          <td style="background-color: rgb(255, 255, 255); border-width: 0">
+            <img src="media/박래혁교수님.jpg" width="100" height="120" />
+            <table>
+              <tr>
+                <td>
+                  <button type="button">
+                    <button type="button" style="font-size: 24px">👍</button>
+                  </button>
+                </td>
+                <td><strong>185</strong></td>
+              </tr>
+            </table>
+          </td>
+
+          <td
+            style="
+              border-right: none;
+              border-left: none;
+              background-color: rgb(255, 255, 255);
+            "
+          >
+            <h3>박래혁</h3>
+            전 공 : 스마트 그리드,사물 인터넷,<br />
+            지능형 컴퓨팅<br />
+            T E L : 02-970-6703<br />
+            E-mail : ihpark@seoultech.ac.kr<br />
+            연구실 : 미래관 326호<br /><br />
+          </td>
+          <td style="background-color: rgb(255, 255, 255); border-width: 0">
+            <img src="media/김진대교수님.jpg" width="100" height="120" />
+            <table>
+              <tr>
+                <td>
+                  <button type="button">
+                    <button type="button" style="font-size: 24px">👍</button>
+                  </button>
+                </td>
+                <td><strong>149</strong></td>
+              </tr>
+            </table>
+          </td>
+          <td
+            style="
+              border-right: none;
+              border-left: none;
+              background-color: rgb(255, 255, 255);
+            "
+          >
+            <h3>김진대</h3>
+            전 공 : 소프트웨어공학,프로그래밍언어<br />
+            T E L : 02-970-6717<br />
+            E-mail : jindae.kim@seoultech.ac.kr<br />
+            연구실 : 미래관 331호<br /><br />
+          </td>
+        </tr>
+      </table>
+    </section>
+    <script>
+      function count(type) {
+        // 결과를 표시할 element
+        const resultElement = document.getElementById('result');
+
+        // 현재 화면에 표시된 값
+        let number = resultElement.innerText;
+
+        // 더하기/빼기
+        if (type === 'plus') {
+          number = parseInt(number) + 1;
+        } else {
+        }
+
+        // 결과 출력
+        resultElement.innerText = number;
+      }
+    </script>
+  </body>
 </html>
