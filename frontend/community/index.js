@@ -3,7 +3,7 @@ async function queryArticles(offset, limit) {
     `http://seheon.email/api/articles?offset=${offset}&limit=${limit}`,
     {
       mode: 'cors',
-      headers: { 'Access-Control-Request-Origin': 'http://seheon.email' },
+      headers: { Origin: 'http://seheon.email' },
     }
   );
   const [articles, numberOfArticles] = await res.json();

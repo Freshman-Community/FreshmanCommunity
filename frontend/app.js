@@ -2,7 +2,7 @@ async function logout() {
   const logoutQuery = await fetch('http://seheon.email/api/users/logout', {
     credentials: 'include',
     mode: 'cors',
-    headers: { 'Access-Control-Request-Origin': 'http://seheon.email' },
+    headers: { Origin: 'http://seheon.email' },
   });
   if (logoutQuery.status === 200) location.reload();
 }
@@ -10,7 +10,7 @@ async function logout() {
 async function generateRandomTip() {
   const res = await fetch('http://seheon.email/api', {
     mode: 'cors',
-    headers: { 'Access-Control-Request-Origin': 'http://seheon.email' },
+    headers: { Origin: 'http://seheon.email' },
   });
   const tip = await res.json();
   const tipSpan = document.querySelector('div.tip > span');
@@ -24,7 +24,7 @@ async function checkLogin() {
   const user = await fetch('http://seheon.email/api/users/me', {
     credentials: 'include',
     mode: 'cors',
-    headers: { 'Access-Control-Request-Origin': 'http://seheon.email' },
+    headers: { Origin: 'http://seheon.email' },
   });
 
   if (user.ok) {

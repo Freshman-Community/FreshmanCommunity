@@ -69,7 +69,7 @@ async function trySignin() {
     },
     body: signinData,
     mode: 'cors',
-    headers: { 'Access-Control-Request-Origin': 'http://seheon.email' },
+    headers: { Origin: 'http://seheon.email' },
   });
   if (signin.ok) location.replace('./app.html');
   else {
@@ -99,7 +99,7 @@ async function trySignup() {
     },
     body: signupData,
     mode: 'cors',
-    headers: { 'Access-Control-Request-Origin': 'http://seheon.email' },
+    headers: { Origin: 'http://seheon.email' },
   });
   if (signup.ok) {
     alert('회원가입이 완료되었습니다. 로그인해주세요.');

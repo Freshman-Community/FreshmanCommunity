@@ -9,7 +9,7 @@ async function submitForm() {
     body: formData,
     credentials: 'include',
     mode: 'cors',
-    headers: { 'Access-Control-Request-Origin': 'http://seheon.email' },
+    headers: { Origin: 'http://seheon.email' },
   });
   if (post.ok) location.replace(document.referrer);
   else if (post.status === 403) {
@@ -25,7 +25,7 @@ window.onload = async () => {
   const user = await fetch('http://seheon.email/api/users/me', {
     credentials: 'include',
     mode: 'cors',
-    headers: { 'Access-Control-Request-Origin': 'http://seheon.email' },
+    headers: { Origin: 'http://seheon.email' },
   });
   if (user.ok) {
     document

@@ -5,7 +5,7 @@ async function thumbUpDown(professorId) {
       method: 'post',
       credentials: 'include',
       mode: 'cors',
-      headers: { 'Access-Control-Request-Origin': 'http://seheon.email' },
+      headers: { Origin: 'http://seheon.email' },
     }
   );
   const post = await res.json();
@@ -24,7 +24,7 @@ async function getThumbs(professorId) {
     `http://seheon.email/api/professor-likes/${professorId}`,
     {
       mode: 'cors',
-      headers: { 'Access-Control-Request-Origin': 'http://seheon.email' },
+      headers: { Origin: 'http://seheon.email' },
     }
   );
   const post = await res.json();
