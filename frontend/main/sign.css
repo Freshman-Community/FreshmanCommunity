@@ -1,7 +1,7 @@
 body {
   height: 100vh;
   margin: 0;
-  background-image: url('.,/storage/background.jpg');
+  background-image: url('../storage/background.jpg');
   background-position: center;
   background-size: cover;
   font-family: 'Raleway';
