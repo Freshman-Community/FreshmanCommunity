@@ -1,5 +1,7 @@
 async function queryBestArticle() {
-  const res = await fetch(`http://seheon.email/api/articles/best`);
+  const res = await fetch(`http://seheon.email/api/articles/best`, {
+    mode: cors,
+  });
   const [articles, numberOfArticles] = await res.json();
   return { articles, numberOfArticles };
 }
@@ -31,7 +33,9 @@ async function loadBestArticles() {
 }
 
 async function queryRecentComments() {
-  const res = await fetch(`http://seheon.email/api/comments?limit=5`);
+  const res = await fetch(`http://seheon.email/api/comments?limit=5`, {
+    mode: cors,
+  });
   const [comments, numberOfComments] = await res.json();
   return { comments, numberOfComments };
 }

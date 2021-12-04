@@ -1,12 +1,13 @@
 async function logout() {
   const logoutQuery = await fetch('http://seheon.email/api/users/logout', {
     credentials: 'include',
+    mode: 'cors',
   });
   if (logoutQuery.status === 200) location.reload();
 }
 
 async function generateRandomTip() {
-  const res = await fetch('http://seheon.email/api');
+  const res = await fetch('http://seheon.email/api', { mode: 'cors' });
   const tip = await res.json();
   const tipSpan = document.querySelector('div.tip > span');
   tipSpan.innerHTML = tip.tip;
@@ -18,6 +19,7 @@ async function checkLogin() {
   const signupDiv = document.querySelector('.sign-up');
   const user = await fetch('http://seheon.email/api/users/me', {
     credentials: 'include',
+    mode: 'cors',
   });
 
   if (user.ok) {

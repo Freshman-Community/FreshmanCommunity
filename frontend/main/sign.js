@@ -10,7 +10,10 @@ function checkEmpty(name) {
 async function validateUsername() {
   const username = document.querySelector('#username');
   const exist = await fetch(
-    `http://seheon.email/api/users/exist/${username.value}`
+    `http://seheon.email/api/users/exist/${username.value}`,
+    {
+      mode: cors,
+    }
   );
   if ((await exist.json()) === false) {
     username.classList.add('warning');
@@ -65,6 +68,7 @@ async function trySignin() {
       'Content-Type': 'application/x-www-form-urlencoded',
     },
     body: signinData,
+    mode: 'cors',
   });
   if (signin.ok) location.replace('./app.html');
   else {
@@ -93,6 +97,7 @@ async function trySignup() {
       'Content-Type': 'application/x-www-form-urlencoded',
     },
     body: signupData,
+    mode: 'cors',
   });
   if (signup.ok) {
     alert('회원가입이 완료되었습니다. 로그인해주세요.');

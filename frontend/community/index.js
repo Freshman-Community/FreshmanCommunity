@@ -1,6 +1,7 @@
 async function queryArticles(offset, limit) {
   const res = await fetch(
-    `http://seheon.email/api/articles?offset=${offset}&limit=${limit}`
+    `http://seheon.email/api/articles?offset=${offset}&limit=${limit}`,
+    { mode: 'cors' }
   );
   const [articles, numberOfArticles] = await res.json();
   return { articles, numberOfArticles };

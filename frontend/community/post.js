@@ -8,6 +8,7 @@ async function submitForm() {
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: formData,
     credentials: 'include',
+    mode: 'cors',
   });
   if (post.ok) location.replace(document.referrer);
   else if (post.status === 403) {
@@ -22,6 +23,7 @@ async function submitForm() {
 window.onload = async () => {
   const user = await fetch('http://seheon.email/api/users/me', {
     credentials: 'include',
+    mode: 'cors',
   });
   if (user.ok) {
     document

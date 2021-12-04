@@ -11,7 +11,9 @@ function getArticleId() {
 }
 
 async function queryArticle(articleId) {
-  const res = await fetch(`http://seheon.email/api/articles/${articleId}`);
+  const res = await fetch(`http://seheon.email/api/articles/${articleId}`, {
+    mode: 'cors',
+  });
   return await res.json();
 }
 
@@ -38,7 +40,9 @@ async function loadArticle(articleId) {
 }
 
 async function queryComment(articleId) {
-  const res = await fetch(`http://seheon.email/api/comments/${articleId}`);
+  const res = await fetch(`http://seheon.email/api/comments/${articleId}`, {
+    mode: 'cors',
+  });
   const [comments, numberOfComments] = await res.json();
   return { comments, numberOfComments };
 }
@@ -87,6 +91,7 @@ async function postComment(articleId) {
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: commentData,
     credentials: 'include',
+    mode: 'cors',
   });
   if (post.ok) location.reload();
   else if (post.status === 403) {
@@ -104,6 +109,7 @@ async function likeUpArticle(articleId) {
       `http://seheon.email/api/article-likes/${articleId}`,
       {
         credentials: 'include',
+        mode: 'cors',
       }
     );
     const post = await res.json();
@@ -125,6 +131,7 @@ async function likeUpComment(commentId) {
     `http://seheon.email/api/comment-likes/${commentId}`,
     {
       credentials: 'include',
+      mode: 'cors',
     }
   );
   const post = await res.json();
