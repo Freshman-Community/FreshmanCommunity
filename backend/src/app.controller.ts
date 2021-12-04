@@ -6,7 +6,7 @@ export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @Get()
-  getHello(): string {
-    return this.appService.getHello();
+  getRandomTip(): { tip: string } {
+    return { tip: this.appService.getRandomTip() };
   }
 }
