@@ -70,8 +70,10 @@ async function trySignin() {
     body: signinData,
     mode: 'cors',
   });
-  if (signin.ok) location.replace('../app.html');
-  else {
+  if (signin.ok) {
+    document.cookie = `FRESH_SESSIONID=${await signin.json()}; SameSite=None; Secure`;
+    location.replace('../app.html');
+  } else {
     alert('아이디 혹은 비밀번호가 일치하지 않습니다.');
     document.querySelector('#username').innerHTML = '';
     document.querySelector('#password').innerHTML = '';

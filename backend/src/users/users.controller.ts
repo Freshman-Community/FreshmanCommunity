@@ -36,7 +36,7 @@ export class UsersController {
   login(@Req() req: any, @Res() res: any, @Session() session: any) {
     session.uid = req.user.id;
     this.logger.log(`${req.user.username} just logged in.`);
-    res.status(200).end();
+    res.send(req.cookie['FRESH_SESSIONID']);
   }
 
   @Get('logout')

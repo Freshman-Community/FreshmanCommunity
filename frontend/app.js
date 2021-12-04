@@ -39,4 +39,5 @@ async function checkLogin() {
 window.onload = async () => {
   await generateRandomTip();
   await checkLogin();
+  console.log(document.cookie);
 };

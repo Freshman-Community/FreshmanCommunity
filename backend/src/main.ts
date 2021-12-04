@@ -13,10 +13,9 @@ async function bootstrap() {
     session({
       cookie: {
         httpOnly: true,
-        secure: false,
+        secure: true,
       },
       name: 'FRESH_SESSIONID',
-      proxy: true,
       secret: process.env.SESSION_SECRET,
       resave: true,
       saveUninitialized: true,
