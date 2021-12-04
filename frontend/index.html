@@ -2,12 +2,52 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Redirect</title>
+    <title>Semunity Intro page</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Raleway"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Nanum+Gothic"
+    />
+    <style>
+      body {
+        font-family: 'Raleway', 'Nanum Gothic';
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        display: flex;
+      }
+
+      div.intro {
+        margin: auto;
+      }
+
+      div.resttime {
+        text-align: center;
+      }
+
+      table {
+        border: 2px #8f8f8f solid;
+      }
+
+      table > tr {
+        border: 0;
+        padding: 2px;
+      }
+
+      tr.header {
+        background-color: #b80007;
+        color: #efefef;
+        text-align: center;
+      }
+    </style>
   </head>
   <body>
     <div class="intro">
       <table>
-        <tr>
+        <tr class="header">
           <td>성명</td>
           <td>학번</td>
           <td>담당 업무</td>
@@ -58,7 +98,7 @@
           }초 뒤 메인페이지로 이동합니다...`;
         if (restTime > 0) setTimeout(() => timeoutHandler(restTime - 1), 1000);
       }
-      setTimeout(() => timeoutHandler(10), 1000);
+      timeoutHandler(11);
     </script>
   </body>
 </html>
