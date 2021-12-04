@@ -1,239 +1,86 @@
-<link rel="stylesheet" type="text/css" href="./services-info/style.css" />
-<script
-  type="text/javascript"
-  src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
-></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script type="text/javascript">
-  $(document).ready(function () {
-    $('.menu>a').click(function () {
-      var submenu = $(this).next('ul');
-      if (submenu.is(':visible')) {
-        submenu.slideUp();
-      } else {
-        submenu.slideDown();
-      }
+  $(document).ready(function(){
+        $(".menu>a").click(function(){
+            var submenu = $(this).next("ul");
+            if( submenu.is(":visible") ){
+                submenu.slideUp();
+            }else{
+                submenu.slideDown();
+            }
+        });
     });
-  });
 </script>
 
 <div class="contents">
-  <p></p>
-  <ul>
-    <li class="menu">
-      <a><span>학과</span></a>
-      <ul class="hide">
-        <li>
-          <a
-            class="academic"
-            href="/department-info/교수님강의평.html"
-            target="right"
-            ><span>교수님</span></a
-          >
-        </li>
-        <li>
-          <a class="academic" href="/department-info/과목평.html" target="right"
-            ><span>과목</span></a
-          >
-        </li>
-        <li>
-          <a class="academic" href="/department-info/건물.html" target="right"
-            ><span>건물</span></a
-          >
-        </li>
-      </ul>
-    </li>
-  </ul>
-  <hr noshade />
-  <ul>
-    <li class="menu">
-      <a><span>학사</span></a>
-      <ul class="hide">
-        <li>
-          <a class="academic" href="sch_dec.html" target="right"
-            ><span>학사일정</span></a
-          >
-        </li>
-        <li>
-          <a
-            class="academic"
-            href="https://www.seoultech.ac.kr/service/info/matters/"
-            target="right"
-            ><span>학사공지</span></a
-          >
-        </li>
+    <p>
+    <ul>
         <li class="menu">
-          <a><span>졸업요건</span></a>
-          <ul class="hide">
-            <li>
-              <a href="graduation.html" target="right"
-                ><span>필수교과목</span></a
-              >
-            </li>
-            <li>
-              <a href="graduation.html#필수이수학점" target="right"
-                ><span>필수이수학점</span></a
-              >
-            </li>
-          </ul>
+            <a><span>학과</span></a>
+            <ul class="hide">
+                <li><a class="academic" href="교수님.html" target="right"><span>교수님</span></a></li>
+                <li><a class="academic" href="과목.html" target="right"><span>과목</span></a></li>
+                <li><a class="academic" href="건물.html" target="right"><span>건물</span></a></li>
+            </ul>
         </li>
-      </ul>
-    </li>
-  </ul>
-  <hr noshade />
-  <ul>
-    <li class="menu">
-      <a class="academic" href="맛집리스트.html" target="right"
-        ><span>주변 음식점</span></a
-      >
-    </li>
-  </ul>
-  <hr noshade />
-  <ul>
-    <li class="menu">
-      <a><span>편의시설</span></a>
-      <ul class="hide">
+    </ul>
+    <hr noshade>
+    <ul>
         <li class="menu">
-          <a><span>음식점</span></a>
-          <ul class="hide">
-            <li>
-              <a href="Eating.html" target="right"><span>학식</span></a>
-            </li>
-            <li>
-              <a href="Convenience Store.html" target="right"
-                ><span>편의점</span></a
-              >
-            </li>
-            <li>
-              <a href="Cafe 232.html" target="right"><span>카페 232</span></a>
-            </li>
-          </ul>
+            <a><span>학사</span></a>
+            <ul class="hide">
+                <li><a class="academic" href="sch_dec.html" target="right"><span>학사일정</span></a></li>
+                <li><a class="academic" href="https://www.seoultech.ac.kr/service/info/matters/" target="right"><span>학사공지</span></a></li>
+                <li class="menu">
+                    <a><span>졸업요건</span></a>
+                    <ul class="hide">
+                        <li><a href="graduation.html" target="right"><span>필수교과목</span></a></li>
+                        <li><a href="graduation.html#필수이수학점" target="right"><span>필수이수학점</span></a></li>
+                    </ul>
+                </li>
+            </ul>
         </li>
-      </ul>
-      <hr noshade />
-      <ul>
+    </ul>
+    <hr noshade>
+    <ul>
         <li class="menu">
-          <a><span>편의시설</span></a>
-          <ul class="hide">
-            <li class="menu">
-              <a><span>음식점</span></a>
-              <ul class="hide">
-                <li>
-                  <a href="Eating.html" target="right"><span>학식</span></a>
+            <a><span>편의시설</span></a>
+            <ul class="hide">
+                <li class="menu">
+                    <a><span>음식점</span></a>
+                    <ul class="hide">
+                        <li><a href="Eating.html" target="right"><span>학식</span></a></li>
+                        <li><a href="Convenience Store.html" target="right"><span>편의점</span></a></li>
+                        <li><a href="Cafe 232.html" target="right"><span>카페 232</span></a></li>
+                    </ul>
                 </li>
-                <li>
-                  <a href="Convenience Store.html" target="right"
-                    ><span>편의점</span></a
-                  >
+                <li class="menu">
+                    <a href="Library.html" target="right"><span>도서관</span></a>
                 </li>
-                <li>
-                  <a href="Cafe 232.html" target="right"
-                    ><span>카페 232</span></a
-                  >
+                <li class="menu">
+                    <a><span>생활관</span></a>
+                    <ul class="hide">
+                        <li><a href="Buram Dormitory.html" target="right"><span>불암학사</span></a></li>
+                        <li><a href="KB Dormitory.html" target="right"><span>KB학사</span></a></li>
+                        <li><a href="Sunglim Dormitory.html" target="right"><span>성림학사</span></a></li>
+                        <li><a href="Surim Dormitory.html" target="right"><span>수림학사</span></a></li>
+                        <li><a href="Nuri Dormitory.html" target="right"><span>누리학사</span></a></li>
+                    </ul>
                 </li>
-              </ul>
-            </li>
-            <li class="menu">
-              <a href="Library.html" target="right"><span>도서관</span></a>
-            </li>
-            <li class="menu">
-              <a><span>생활관</span></a>
-              <ul class="hide">
-                <li>
-                  <a href="Buram Dormitory.html" target="right"
-                    ><span>불암학사</span></a
-                  >
-                </li>
-                <li>
-                  <a href="KB Dormitory.html" target="right"
-                    ><span>KB학사</span></a
-                  >
-                </li>
-                <li>
-                  <a href="Sunglim Dormitory.html" target="right"
-                    ><span>성림학사</span></a
-                  >
-                </li>
-                <li>
-                  <a href="Surim Dormitory.html" target="right"
-                    ><span>수림학사</span></a
-                  >
-                </li>
-                <li>
-                  <a href="Nuri Dormitory.html" target="right"
-                    ><span>누리학사</span></a
-                  >
-                </li>
-              </ul>
-            </li>
-          </ul>
+            </ul>
         </li>
-        <li class="menu">
-          <a><span>생활관</span></a>
-          <ul class="hide">
-            <li>
-              <a href="Buram Dormitory.html" target="right"
-                ><span>불암학사</span></a
-              >
-            </li>
-            <li>
-              <a href="KB Dormitory.html" target="right"><span>KB학사</span></a>
-            </li>
-            <li>
-              <a href="Sunglim Dormitory.html" target="right"
-                ><span>성림학사</span></a
-              >
-            </li>
-            <li>
-              <a href="Surim Dormitory.html" target="right"
-                ><span>수림학사</span></a
-              >
-            </li>
-            <li>
-              <a href="Nuri Dormitory.html" target="right"
-                ><span>누리학사</span></a
-              >
-            </li>
-          </ul>
-        </li>
-        <li class="menu">
-          <a><span>기타</span></a>
-          <ul class="hide">
-            <li>
-              <a href="Post Office.html" target="right"><span>우체국</span></a>
-            </li>
-            <li>
-              <a href="Salon.html" target="right"><span>미용실</span></a>
-            </li>
-            <li>
-              <a href="Bank.html" target="right"><span>은행</span></a>
-            </li>
-            <li>
-              <a href="Bookstore.html" target="right"><span>서점</span></a>
-            </li>
-            <li>
-              <a href="Print.html" target="right"
-                ><span>프린트 가능한 곳</span></a
-              >
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-  </ul>
-  <hr noshade />
-  <ul>
-    <li class="menu">
-      <a class="academic" href="게시판.html" target="right"
-        ><span>게시판</span></a
-      >
-    </li>
-  </ul>
-  <hr noshade />
+    </ul>
+    <hr noshade>
+    <ul>
+        <li class="menu"><a class="academic" href="게시판.html" target="right"><span>게시판</span></a></li>
+    </ul>
+    <hr noshade>
 </div>
 
 <script>
-  $('.contents a span').on('click', function () {
-    $('.contents a span').css('color', 'inherit');
-    $(this).css('color', '#B80007');
-  });
+    $(".contents a span").on("click", function () {
+  $(".contents a span").css('color', 'inherit');
+  $(this).css('color', '#B80007');
+});
 </script>
