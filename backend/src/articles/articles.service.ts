@@ -37,7 +37,7 @@ export class ArticlesService {
   async findBest() {
     return await this.articlesRepository
       .createQueryBuilder('article')
-      .orderBy('article."likeCount"')
+      .orderBy('article."likeCount"', 'DESC')
       .limit(5)
       .getManyAndCount();
   }

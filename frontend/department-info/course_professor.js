@@ -1,13 +1,16 @@
 async function thumbUpDown(professorId) {
-  const res = await fetch(`/api/professor-likes/${professorId}`, {
-    method: 'post',
-    credentials: 'same-origin',
-  });
+  const res = await fetch(
+    `http://seheon.email/api/professor-likes/${professorId}`,
+    {
+      method: 'post',
+      credentials: 'include',
+    }
+  );
   const post = await res.json();
   if (typeof post === 'boolean' || post.ok) location.reload();
   else if (post.statusCode === 403) {
     alert('로그인이 필요합니다.');
-    parent.parent.location.replace('/main/signin.html');
+    parent.parent.location.replace('./main/signin.html');
   } else {
     alert(post.statusText);
     location.replace(document.referrer);
@@ -15,7 +18,9 @@ async function thumbUpDown(professorId) {
 }
 
 async function getThumbs(professorId) {
-  const res = await fetch(`/api/professor-likes/${professorId}`);
+  const res = await fetch(
+    `http://seheon.email/api/professor-likes/${professorId}`
+  );
   const post = await res.json();
   if (typeof post === 'number' || post.ok) return post;
   else {

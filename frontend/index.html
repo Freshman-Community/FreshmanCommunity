@@ -91,7 +91,7 @@
     <script>
       const restTimeDiv = document.querySelector('.resttime');
       function timeoutHandler(restTime) {
-        if (restTime === 0) location.replace('/app.html');
+        if (restTime === 0) location.replace('./app.html');
         else
           restTimeDiv.innerHTML = `${
             restTime - 1

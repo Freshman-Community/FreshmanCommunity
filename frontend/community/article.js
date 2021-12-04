@@ -11,7 +11,7 @@ function getArticleId() {
 }
 
 async function queryArticle(articleId) {
-  const res = await fetch(`/api/articles/${articleId}`);
+  const res = await fetch(`http://seheon.email/api/articles/${articleId}`);
   return await res.json();
 }
 
@@ -38,7 +38,7 @@ async function loadArticle(articleId) {
 }
 
 async function queryComment(articleId) {
-  const res = await fetch(`/api/comments/${articleId}`);
+  const res = await fetch(`http://seheon.email/api/comments/${articleId}`);
   const [comments, numberOfComments] = await res.json();
   return { comments, numberOfComments };
 }
@@ -82,16 +82,16 @@ async function postComment(articleId) {
   commentData.append('content', document.querySelector('#content').value);
   commentData.append('anonymity', document.querySelector('#anonymity').checked);
   commentData.append('articleId', articleId);
-  const post = await fetch('/api/comments/', {
+  const post = await fetch('http://seheon.email/api/comments/', {
     method: 'post',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: commentData,
-    credentials: 'same-origin',
+    credentials: 'include',
   });
   if (post.ok) location.reload();
   else if (post.status === 403) {
     alert('로그인이 필요합니다.');
-    parent.location.replace('/main/signin.html');
+    parent.location.replace('./main/signin.html');
   } else {
     alert(post.statusText);
     location.replace(document.referrer);
@@ -100,14 +100,17 @@ async function postComment(articleId) {
 
 async function likeUpArticle(articleId) {
   try {
-    const res = await fetch(`/api/article-likes/${articleId}`, {
-      credentials: 'same-origin',
-    });
+    const res = await fetch(
+      `http://seheon.email/api/article-likes/${articleId}`,
+      {
+        credentials: 'include',
+      }
+    );
     const post = await res.json();
     if (typeof post === 'boolean' || post.ok) location.reload();
     else if (post.statusCode === 403) {
       alert('로그인이 필요합니다.');
-      parent.location.replace('/main/signin.html');
+      parent.location.replace('./main/signin.html');
     } else {
       alert(post.statusText);
       location.replace(document.referrer);
@@ -118,14 +121,17 @@ async function likeUpArticle(articleId) {
 }
 
 async function likeUpComment(commentId) {
-  const res = await fetch(`/api/comment-likes/${commentId}`, {
-    credentials: 'same-origin',
-  });
+  const res = await fetch(
+    `http://seheon.email/api/comment-likes/${commentId}`,
+    {
+      credentials: 'include',
+    }
+  );
   const post = await res.json();
   if (typeof post === 'boolean' || post.ok) location.reload();
   else if (post.statusCode === 403) {
     alert('로그인이 필요합니다.');
-    parent.location.replace('/main/signin.html');
+    parent.location.replace('./main/signin.html');
   } else {
     alert(post.statusText);
     location.replace(document.referrer);

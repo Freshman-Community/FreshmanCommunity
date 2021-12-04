@@ -1,5 +1,5 @@
 async function queryBestArticle() {
-  const res = await fetch(`/api/articles/best`);
+  const res = await fetch(`http://seheon.email/api/articles/best`);
   const [articles, numberOfArticles] = await res.json();
   return { articles, numberOfArticles };
 }
@@ -25,13 +25,13 @@ async function loadBestArticles() {
   commentElements.forEach((value, key, parent) => {
     const articleId = value.attributes.getNamedItem('article-id').value;
     value.addEventListener('click', (event) => {
-      location.href = `/community/article.html?id=${articleId}`;
+      location.href = `./community/article.html?id=${articleId}`;
     });
   });
 }
 
 async function queryRecentComments() {
-  const res = await fetch(`/api/comments?limit=5`);
+  const res = await fetch(`http://seheon.email/api/comments?limit=5`);
   const [comments, numberOfComments] = await res.json();
   return { comments, numberOfComments };
 }
@@ -61,7 +61,7 @@ async function loadRecentComments() {
   commentElements.forEach((value, key, parent) => {
     const articleId = value.attributes.getNamedItem('article-id').value;
     value.addEventListener('click', (event) => {
-      location.href = `/community/article.html?id=${articleId}`;
+      location.href = `./community/article.html?id=${articleId}`;
     });
   });
 }

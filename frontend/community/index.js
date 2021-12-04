@@ -1,5 +1,7 @@
 async function queryArticles(offset, limit) {
-  const res = await fetch(`/api/articles?offset=${offset}&limit=${limit}`);
+  const res = await fetch(
+    `http://seheon.email/api/articles?offset=${offset}&limit=${limit}`
+  );
   const [articles, numberOfArticles] = await res.json();
   return { articles, numberOfArticles };
 }
@@ -31,7 +33,7 @@ async function loadArticles(page) {
   for (let i = offset + 1; i <= offset + numberOfArticles; i++) {
     const tr = document.querySelector(`#article-${i}`);
     tr.addEventListener('click', (event) => {
-      location.href = `/community/article.html?id=${i}`;
+      location.href = `article.html?id=${i}`;
     });
   }
 }

@@ -1,12 +1,12 @@
 async function logout() {
-  const logoutQuery = await fetch('/api/users/logout', {
-    credentials: 'same-origin',
+  const logoutQuery = await fetch('http://seheon.email/api/users/logout', {
+    credentials: 'include',
   });
   if (logoutQuery.status === 200) location.reload();
 }
 
 async function generateRandomTip() {
-  const res = await fetch('/api');
+  const res = await fetch('http://seheon.email/api');
   const tip = await res.json();
   const tipSpan = document.querySelector('div.tip > span');
   tipSpan.innerHTML = tip.tip;
@@ -16,7 +16,9 @@ async function generateRandomTip() {
 async function checkLogin() {
   const signinDiv = document.querySelector('.sign-in');
   const signupDiv = document.querySelector('.sign-up');
-  const user = await fetch('/api/users/me', { credentials: 'same-origin' });
+  const user = await fetch('http://seheon.email/api/users/me', {
+    credentials: 'include',
+  });
 
   if (user.ok) {
     signinDiv.innerHTML = (await user.json()).nickname;
