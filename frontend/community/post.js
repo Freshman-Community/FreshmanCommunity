@@ -5,7 +5,7 @@ async function submitForm() {
   formData.append('anonymity', document.querySelector('#anonymity').checked);
   const post = await fetch('/api/articles', {
     method: 'post',
-    headersL: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: formData,
     credentials: 'same-origin',
   });

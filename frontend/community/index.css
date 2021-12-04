@@ -26,3 +26,12 @@ td {
   font-size: 14px;
   text-align: center;
 }
+
+tr {
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+tr:hover {
+  background-color: #cfcfcf;
+}

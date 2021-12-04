@@ -22,8 +22,8 @@ export class ArticlesController {
 
   @Post()
   @UseGuards(SessionGuard)
-  create(@Body() createArticleDto: CreateArticleDto, @Session() session) {
-    return this.articlesService.create(createArticleDto, session.uid);
+  async create(@Body() createArticleDto: CreateArticleDto, @Session() session) {
+    return await this.articlesService.create(createArticleDto, session.uid);
   }
 
   @Get()
@@ -40,8 +40,8 @@ export class ArticlesController {
   }
 
   @Get('best')
-  findBest() {
-    return this.articlesService.findBest();
+  async findBest() {
+    return await this.articlesService.findBest();
   }
 
   @Get(':id')

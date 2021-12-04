@@ -2,17 +2,14 @@ body {
   font-family: 'Raleway', 'Nanum Gothic';
   margin-left: calc(-500px + 50%);
   display: flex;
+  flex-direction: column;
 }
 
 section {
-  width: 700px;
-  border-right: 1px #8f8f8f solid;
+  width: calc(100% - 40px);
   padding: 0 20px;
-}
-
-aside {
-  padding-left: 20px;
-  width: 300px;
+  display: flex;
+  flex-direction: column;
 }
 
 h1.title {
@@ -67,4 +64,94 @@ article > p {
 
 aside {
   width: 300px;
+}
+
+div.content {
+  position: relative;
+  width: 100%;
+  height: calc(100% - 50px);
+  margin: 10px 0;
+}
+
+input + .focus-bolder,
+textarea + .focus-bolder {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #b80007;
+  transition: 0.5s;
+}
+
+input:focus + .focus-bolder,
+textarea:focus + .focus-bolder {
+  width: 100%;
+}
+
+div.anonymity {
+  width: 80px;
+  display: flex;
+  height: 20px;
+  align-items: center;
+}
+
+div.anonymity > label {
+  width: 40px;
+  font-size: 10px;
+  color: #8f8f8f;
+}
+
+input,
+textarea {
+  border: none;
+  outline: none;
+  width: 100%;
+}
+
+button {
+  width: 80px;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+button.submit {
+  background-color: #b80007;
+  border: 1px #b80007 solid;
+  color: white;
+}
+
+button:hover {
+  background-color: white;
+  color: #8f8f8f;
+}
+
+section.post-comment {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+section.post-comment > div.content {
+  width: 780px;
+  border: 1px #8f8f8f solid;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+section.post-comment > div.noncontent {
+  width: 180px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+textarea {
+  height: 100px;
 }

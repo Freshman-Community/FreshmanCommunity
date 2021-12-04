@@ -11,14 +11,14 @@ export class ArticlesService {
     @InjectRepository(Article) private articlesRepository: Repository<Article>,
   ) {}
 
-  create(createArticleDto: CreateArticleDto, userId: number) {
+  async create(createArticleDto: CreateArticleDto, userId: number) {
     const article = new Article();
 
     article.title = createArticleDto.title;
     article.content = createArticleDto.content;
     article.anonymity = createArticleDto.anonymity === 'true' ? true : false;
     article.authorId = userId;
-    return this.articlesRepository.save(article);
+    return await this.articlesRepository.save(article);
   }
 
   findAll(offset: number, limit: number): Promise<[Article[], number]> {
@@ -34,15 +34,36 @@ export class ArticlesService {
     return this.articlesRepository.count();
   }
 
-  findBest() {
-    return this.articlesRepository
+  async findBest() {
+    return await this.articlesRepository
       .createQueryBuilder('article')
-      .orderBy('article.likeCount')
-      .limit(5);
+      .orderBy('article."likeCount"')
+      .limit(5)
+      .getManyAndCount();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} article`;
+  async findOne(id: number) {
+    const article = await this.articlesRepository
+      .createQueryBuilder('article')
+      .leftJoinAndSelect('article.author', 'user')
+      .where(`article."id" = :id`, { id })
+      .getOne();
+
+    article.viewCount += 1;
+    await this.articlesRepository.save(article);
+    return article;
+  }
+
+  async likeUp(id: number) {
+    const article = await this.articlesRepository.findOne({ id });
+    article.likeCount += 1;
+    await this.articlesRepository.save(article);
+  }
+
+  async likeDown(id: number) {
+    const article = await this.articlesRepository.findOne({ id });
+    article.likeCount -= 1;
+    await this.articlesRepository.save(article);
   }
 
   update(id: number, updateArticleDto: UpdateArticleDto) {

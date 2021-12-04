@@ -1,5 +1,6 @@
 body {
-  margin: 0px auto;
+  margin: 0;
+  padding-left: calc(-500px + 50%);
   width: 1000px;
   font-family: 'Raleway', 'Nanum Gothic';
   background-color: #efefef;
@@ -43,6 +44,10 @@ nav > .logo {
   margin-top: 15px;
   margin-bottom: -15px;
   margin-left: 50px;
+}
+
+nav > .logo > img {
+  cursor: pointer;
 }
 
 nav > .menu {

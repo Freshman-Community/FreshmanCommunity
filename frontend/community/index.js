@@ -5,29 +5,35 @@ async function queryArticles(offset, limit) {
 }
 
 async function loadArticles(page) {
-  const { articles } = await queryArticles((page - 1) * 30, 30);
+  const offset = (page - 1) * 30;
+  const limit = 30;
+  const { articles, numberOfArticles } = await queryArticles(offset, limit);
   const articlePlace = document.querySelector(
     '.article-table-section > table > tbody'
   );
 
-  articlePlace.innerHTML = `
-    ${articles
-      .map(
-        (article) => `
-          <tr id=${article.id}>
-            <td>${article.id}</td>
-            <td>${article.title}</td>
-            <td>${article.author.nickname}</td>
-            <td>${new Date(
-              Date.parse(article.createdAt)
-            ).toLocaleDateString()}</td>
-            <td>${article.likeCount}</td>
-            <td>${article.viewCount}</td>
-          </tr>
-        `
-      )
-      .join('')}
-  `;
+  articles.map((article) => {
+    articlePlace.insertAdjacentHTML(
+      'afterbegin',
+      `
+      <tr id=article-${article.id}>
+        <td>${article.id}</td>
+        <td>${article.title}</td>
+        <td>${article.author.nickname}</td>
+        <td>${new Date(Date.parse(article.createdAt)).toLocaleString()}</td>
+        <td>${article.likeCount}</td>
+        <td>${article.viewCount}</td>
+      </tr>
+      `
+    );
+  });
+
+  for (let i = offset + 1; i <= offset + numberOfArticles; i++) {
+    const tr = document.querySelector(`#article-${i}`);
+    tr.addEventListener('click', (event) => {
+      location.href = `/community/article.html?id=${i}`;
+    });
+  }
 }
 
 window.onload = () => {

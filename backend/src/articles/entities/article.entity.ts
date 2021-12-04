@@ -1,9 +1,11 @@
 import { User } from 'src/users/entities/user.entity';
+import { Comment } from 'src/comments/entities/comment.entity';
 import {
   Column,
   CreateDateColumn,
   Entity,
   ManyToOne,
+  OneToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
@@ -39,4 +41,7 @@ export class Article {
 
   @Column({ default: 0 })
   viewCount: number;
+
+  @OneToMany((type) => Comment, (comment) => comment.article, { cascade: true })
+  comments: Comment[];
 }

@@ -14,11 +14,19 @@ export class Comment {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @ManyToOne((type) => User, (user) => user.id, { cascade: false })
+  @Column()
   writerId: number;
 
-  @ManyToOne((type) => Article, (article) => article.id, { cascade: false })
+  @ManyToOne((type) => User, (user) => user.comments, { cascade: false })
+  writer: User;
+
+  @Column()
   articleId: number;
+
+  @ManyToOne((type) => Article, (article) => article.comments, {
+    cascade: false,
+  })
+  article: Article;
 
   @CreateDateColumn()
   createdAt: Date;
