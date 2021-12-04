@@ -1,9 +1,14 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import * as session from 'express-session';
+import { readFileSync } from 'fs';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
+  const httpsOptions = {
+    key: readFileSync('/certs/live/seheon.email/privkey.pem'),
+    cert: readFileSync('/certs/live/seheon.email/cert.pem'),
+  };
+  const app = await NestFactory.create(AppModule, { httpsOptions });
   app.use(
     session({
       cookie: {
@@ -16,7 +21,10 @@ async function bootstrap() {
     }),
   );
   app.setGlobalPrefix('api');
-  app.enableCors();
+  app.enableCors({
+    origin: 'https://seheon.email',
+    credentials: true,
+  });
   await app.listen(3000);
 }
 bootstrap();

@@ -1,4 +1,19 @@
 services:
+  certbot:
+    environment:
+      SERVER_HOST: ${SERVER_HOST}
+    build:
+      context: ./certbot
+    networks:
+      - default
+    ports:
+      - "80:80"
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ./certbot/nginx.conf:/etc/nginx/nginx.conf
+      - ./certbot/certs:/etc/letsencrypt
+      - ./certbot/log:/var/log/letsencrypt
+
   database:
     environment:
       - POSTGRES_PASSWORD=${DATABASE_PASSWORD}
@@ -8,6 +23,7 @@ services:
     networks:
       - default
     volumes:
+      - /etc/localtime:/etc/localtime:ro
       - db-data:/var/lib/postgresql/data
 
   backend:
@@ -22,16 +38,19 @@ services:
     networks:
       - default
     volumes:
+      - /etc/localtime:/etc/localtime:ro
       - ./backend/src:/app/src
+      - ./certbot/certs:/certs
 
   frontend:
     environment:
       - NGINX_HOST=${SERVER_HOST}
-      - NGINX_PORT=80
+      - NGINX_PORT=3000
     image: nginx:alpine
     networks:
       - default
     volumes:
+      - /etc/localtime:/etc/localtime:ro
       - ./frontend:/usr/share/nginx/html:ro
 
   proxy:
@@ -47,6 +66,7 @@ services:
     ports:
       - "${SERVER_PORT}:80"
     volumes:
+      - /etc/localtime:/etc/localtime:ro
       - ./proxy/default.conf:/etc/nginx/templates/default.conf.template:ro
 
 networks:

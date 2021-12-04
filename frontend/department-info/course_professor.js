@@ -1,11 +1,10 @@
 async function thumbUpDown(professorId) {
   const res = await fetch(
-    `http://seheon.email/api/professor-likes/${professorId}`,
+    `https://seheon.email/api/professor-likes/${professorId}`,
     {
       method: 'post',
       credentials: 'include',
       mode: 'cors',
-      headers: { Origin: 'http://seheon.email' },
     }
   );
   const post = await res.json();
@@ -21,10 +20,9 @@ async function thumbUpDown(professorId) {
 
 async function getThumbs(professorId) {
   const res = await fetch(
-    `http://seheon.email/api/professor-likes/${professorId}`,
+    `https://seheon.email/api/professor-likes/${professorId}`,
     {
       mode: 'cors',
-      headers: { Origin: 'http://seheon.email' },
     }
   );
   const post = await res.json();

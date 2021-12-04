@@ -11,9 +11,8 @@ function getArticleId() {
 }
 
 async function queryArticle(articleId) {
-  const res = await fetch(`http://seheon.email/api/articles/${articleId}`, {
+  const res = await fetch(`https://seheon.email/api/articles/${articleId}`, {
     mode: 'cors',
-    headers: { Origin: 'http://seheon.email' },
   });
   return await res.json();
 }
@@ -41,9 +40,8 @@ async function loadArticle(articleId) {
 }
 
 async function queryComment(articleId) {
-  const res = await fetch(`http://seheon.email/api/comments/${articleId}`, {
+  const res = await fetch(`https://seheon.email/api/comments/${articleId}`, {
     mode: 'cors',
-    headers: { Origin: 'http://seheon.email' },
   });
   const [comments, numberOfComments] = await res.json();
   return { comments, numberOfComments };
@@ -88,13 +86,12 @@ async function postComment(articleId) {
   commentData.append('content', document.querySelector('#content').value);
   commentData.append('anonymity', document.querySelector('#anonymity').checked);
   commentData.append('articleId', articleId);
-  const post = await fetch('http://seheon.email/api/comments/', {
+  const post = await fetch('https://seheon.email/api/comments/', {
     method: 'post',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: commentData,
     credentials: 'include',
     mode: 'cors',
-    headers: { Origin: 'http://seheon.email' },
   });
   if (post.ok) location.reload();
   else if (post.status === 403) {
@@ -109,11 +106,10 @@ async function postComment(articleId) {
 async function likeUpArticle(articleId) {
   try {
     const res = await fetch(
-      `http://seheon.email/api/article-likes/${articleId}`,
+      `https://seheon.email/api/article-likes/${articleId}`,
       {
         credentials: 'include',
         mode: 'cors',
-        headers: { Origin: 'http://seheon.email' },
       }
     );
     const post = await res.json();
@@ -132,11 +128,10 @@ async function likeUpArticle(articleId) {
 
 async function likeUpComment(commentId) {
   const res = await fetch(
-    `http://seheon.email/api/comment-likes/${commentId}`,
+    `https://seheon.email/api/comment-likes/${commentId}`,
     {
       credentials: 'include',
       mode: 'cors',
-      headers: { Origin: 'http://seheon.email' },
     }
   );
   const post = await res.json();

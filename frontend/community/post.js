@@ -3,13 +3,12 @@ async function submitForm() {
   formData.append('title', document.querySelector('#title').value);
   formData.append('content', document.querySelector('#content').value);
   formData.append('anonymity', document.querySelector('#anonymity').checked);
-  const post = await fetch('http://seheon.email/api/articles', {
+  const post = await fetch('https://seheon.email/api/articles', {
     method: 'post',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: formData,
     credentials: 'include',
     mode: 'cors',
-    headers: { Origin: 'http://seheon.email' },
   });
   if (post.ok) location.replace(document.referrer);
   else if (post.status === 403) {
@@ -22,10 +21,9 @@ async function submitForm() {
 }
 
 window.onload = async () => {
-  const user = await fetch('http://seheon.email/api/users/me', {
+  const user = await fetch('https://seheon.email/api/users/me', {
     credentials: 'include',
     mode: 'cors',
-    headers: { Origin: 'http://seheon.email' },
   });
   if (user.ok) {
     document

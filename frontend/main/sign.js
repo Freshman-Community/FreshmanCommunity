@@ -10,7 +10,7 @@ function checkEmpty(name) {
 async function validateUsername() {
   const username = document.querySelector('#username');
   const exist = await fetch(
-    `http://seheon.email/api/users/exist/${username.value}`,
+    `https://seheon.email/api/users/exist/${username.value}`,
     {
       mode: cors,
     }
@@ -62,14 +62,13 @@ async function trySignin() {
   const signinData = new URLSearchParams();
   signinData.append('username', document.querySelector('#username').value);
   signinData.append('password', document.querySelector('#password').value);
-  const signin = await fetch('http://seheon.email/api/users/login', {
+  const signin = await fetch('https://seheon.email/api/users/login', {
     method: 'post',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
     },
     body: signinData,
     mode: 'cors',
-    headers: { Origin: 'http://seheon.email' },
   });
   if (signin.ok) location.replace('./app.html');
   else {
@@ -92,14 +91,13 @@ async function trySignup() {
     'enteredYear',
     document.querySelector('#entered-year').value
   );
-  const signup = await fetch('http://seheon.email/api/users', {
+  const signup = await fetch('https://seheon.email/api/users', {
     method: 'post',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
     },
     body: signupData,
     mode: 'cors',
-    headers: { Origin: 'http://seheon.email' },
   });
   if (signup.ok) {
     alert('회원가입이 완료되었습니다. 로그인해주세요.');
